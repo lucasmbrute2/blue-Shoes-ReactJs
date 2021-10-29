@@ -1,0 +1,87 @@
+.footer{
+    position: absolute;
+    bottom: 1px;
+    background-color: #e6e6e6;
+    width: 100%;
+}
+
+.footer-container{
+    display: grid;
+    grid-template-areas:
+    "first second third"
+    "fourth fifth  sixth";
+    text-align: center;
+    
+}
+.footer-container-div{
+    padding: 2rem 0;
+
+}
+
+.footer-container-div-p{
+
+    text-align: center;
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    color: #1d1d1f
+} 
+
+.footer-container-div-bottom{
+
+    font-size: 12px;
+    text-align: start;
+    margin-left: 170px;
+    padding: .5rem;
+    cursor: pointer;
+    color: #424245;
+}
+
+.first{
+    grid-area: first;
+    
+}
+
+.second{
+    grid-area: second;
+}
+
+.third{
+
+    grid-area: third;
+}
+
+.fourth{
+
+    grid-area: fourth;
+   
+}
+
+.fifth{
+
+    grid-area: fifth;
+    
+}
+
+.sixth{
+    
+    grid-area: sixth;
+    align-self: flex-end;
+    
+}
+
+
+/* ====FONTAWSOME====== */
+
+.fas{
+    margin-left: 15px;
+}
+
+.far{
+    margin-left: 15px;
+}
+
+.fab{
+    font-size: 30px;
+    margin-left: 20px;
+    cursor: pointer;
+}
