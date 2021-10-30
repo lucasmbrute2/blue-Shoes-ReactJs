@@ -4,14 +4,16 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import MyAccount from "./components/Pages/My-Account/MyAccount";
 import MyAccountEdit from "./components/Pages/My-Account/MyAccountEdit";
+import Home from "./components/Pages/Home/Home";
 
 function App() {
   return (
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/my-account" exact={true} component={MyAccount} />
-        <Route path="/my-account-edit" exact={true} component={MyAccountEdit} />
+        <Route path="/" exact={true} component = {Home}/>
+        <Route path="/my-account" component={MyAccount} />
+        <Route path="/my-account-edit" component={MyAccountEdit} />
       </Switch>
     </Router>
   );
