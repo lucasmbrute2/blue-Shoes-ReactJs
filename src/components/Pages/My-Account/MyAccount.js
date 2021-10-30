@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import AccountDataInfos from '../../components/Account-Data-Infos/AccountDataInfos'
-import EditDelete from '../../components/Buttons/Edit-Delete/EditDelete'
-import Titles from '../../components/Titles/Titles'
+import AccountDataInfos from '../../Account-Data-Infos/AccountDataInfos'
+import EditDelete from '../../Buttons/Edit-Delete/EditDelete'
+import Titles from '../../Titles/Titles'
 import './MyAccount.css'
+
 export default function MyAccount() {
     return (
         <>

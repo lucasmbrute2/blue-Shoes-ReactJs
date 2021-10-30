@@ -1,14 +1,15 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import AccountDataInputs from '../../components/Account-Data-Inputs/AccountDataInputs'
-import EditDelete from '../../components/Buttons/Edit-Delete/EditDelete'
-import Titles from '../../components/Titles/Titles'
+import AccountDataInputs from '../../Account-Data-Inputs/AccountDataInputs'
+import EditDelete from '../../Buttons/Edit-Delete/EditDelete'
+import Titles from '../../Titles/Titles'
+import './MyAccountEdit.css'
 
 export default function MyAccountEdit() {
     return (
         <>
         <div className='MyAccount-Container'>
-            <div className='MyAccount'>
+            <div className='MyAccountEdit'>
                 <Titles
                 Title='Seus dados'
                 />
