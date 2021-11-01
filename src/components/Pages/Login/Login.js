@@ -1,6 +1,7 @@
 import React from 'react'
 import "./Login.css"; 
 import { Link } from "react-router-dom";
+import SubmitButton from "../../Buttons/SubmitButton/SubmitButton"
 
 export default function Login() {
     return (
@@ -17,7 +18,7 @@ export default function Login() {
                     <label className='form-div-label'>Senha</label>
                 </div>
                 <div>
-                    <input type='submit' className='form-button' autoComplete={false}></input>
+                    <SubmitButton/>
                 </div>
                
                 <div className='form-div-links'>
