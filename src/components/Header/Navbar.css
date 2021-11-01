@@ -26,7 +26,7 @@
 
 .navbar .texto-ligth {
   background: url(../assets/Stars.jpg);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
 }
@@ -105,7 +105,7 @@
 
 .darklogo {
   background: url(../assets/nuvens-ceu.jpg);
-  -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
 }
