@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom"
+import SubmitButton from "../Buttons/SubmitButton/SubmitButton"
 import "./SignIn.css"
+
 export default function SignIn(){
     return(
     <div className='form-container'>
@@ -15,11 +17,11 @@ export default function SignIn(){
                 <label className='form-div-label'>Senha</label>
             </div>
             <div>
-                <input type='submit' className='form-button' autoComplete={false}></input>
+                <SubmitButton/>
             </div>
             <div className='form-div-links'>
                 <p className='form-div-links-p'>Não tem uma conta?<Link to='/register' className='form-button-links-link'>Cadastre aqui</Link></p>
-                <p className='form-div-links-p'>Lembrar minha senha</p>
+                <p className='form-div-links-p'>Esqueci minha senha</p>
             </div>
         </form>
     </div>

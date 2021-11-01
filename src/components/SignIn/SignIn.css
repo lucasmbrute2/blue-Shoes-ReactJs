@@ -15,6 +15,7 @@
 .form-h1{
     margin-bottom: 2rem;
     font-weight: 400;
+    text-align: center;
 }
 
 .form-div{
@@ -49,19 +50,7 @@
     background-color: #fff;
 }
 
-.form-button{
-    display: block;
-    width: 100%;
-    padding: .65rem 2rem;
-    background-color: #0f1c24;
-    color: #fff;
-    font-family: 'Poppins',sans-serif;
-    border: none;
-    border-radius: .5rem;
-    font-size: .75rem;
-    cursor: pointer;
-    transition: .3s;
-}
+
 .form-button:hover{
     box-shadow: 0 10px 36px rgba(9, 71, 241, 0.192);
 }
