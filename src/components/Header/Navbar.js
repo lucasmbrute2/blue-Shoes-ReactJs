@@ -46,9 +46,9 @@ function Navbar() {
   };
 
   return (
-    <nav className={`navbar ${!isDarkMode && "darkmode"}`}>
+    <nav className={`navbar ${isDarkMode && "darkmode"}`}>
       <Link to="/" className="navbar-logo" onClick={closeMobileMenu}>
-        <h1 className={`${!isDarkMode ? "darklogo" : "texto-ligth"}`}>
+        <h1 className={`${!isDarkMode ? "texto-ligth" : "darklogo"}`}>
           Blue Shoes
         </h1>
       </Link>
@@ -63,7 +63,7 @@ function Navbar() {
         <li className="nav-item">
           <Link
             to="/"
-            className={`nav-links ${!isDarkMode && "nav-links-dark"}`}
+            className={`nav-links ${isDarkMode && "nav-links-dark"}`}
             onClick={closeMobileMenu}
           >
             Home
@@ -76,11 +76,11 @@ function Navbar() {
         >
           <Link
             to="/categoria"
-            className={`nav-links ${!isDarkMode && "nav-links-dark"}`}
+            className={`nav-links ${isDarkMode && "nav-links-dark"}`}
             onClick={closeMobileMenu}
           >
             Categorias{" "}
-            <i className={`fas fa-caret-down ${!isDarkMode && "fasDark"}`} />
+            <i className={`fas fa-caret-down ${isDarkMode && "fasDark"}`} />
           </Link>
           {dropdownCategoria && <DropdownCategoria />}
         </li>
@@ -91,11 +91,11 @@ function Navbar() {
         >
           <Link
             to="/Entrar"
-            className={`nav-links ${!isDarkMode && "nav-links-dark"}`}
+            className={`nav-links ${isDarkMode && "nav-links-dark"}`}
             onClick={closeMobileMenu}
           >
             Entrar{" "}
-            <i className={`fas fa-caret-down ${!isDarkMode && "fasDark"}`} />
+            <i className={`fas fa-caret-down ${isDarkMode && "fasDark"}`} />
           </Link>
           {dropdownEntrar && <DropdownEntrar />}
         </li>
