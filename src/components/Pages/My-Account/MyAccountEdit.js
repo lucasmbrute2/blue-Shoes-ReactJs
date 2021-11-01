@@ -2,12 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import AccountDataInputs from '../../Account-Data-Inputs/AccountDataInputs'
 import EditDelete from '../../Buttons/Edit-Delete/EditDelete'
+import Navbar from '../../Header/Navbar'
 import Titles from '../../Titles/Titles'
 import './MyAccountEdit.css'
 
 export default function MyAccountEdit() {
     return (
         <>
+        <Navbar/>
         <div className='MyAccount-Container'>
             <div className='MyAccountEdit'>
                 <Titles
