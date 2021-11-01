@@ -2,12 +2,14 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import AccountDataInfos from '../../Account-Data-Infos/AccountDataInfos'
 import EditDelete from '../../Buttons/Edit-Delete/EditDelete'
+import Navbar from '../../Header/Navbar'
 import Titles from '../../Titles/Titles'
 import './MyAccount.css'
 
 export default function MyAccount() {
     return (
         <>
+        <Navbar/>
         <div className='MyAccount-Container'>
             <div className='MyAccount'>
                 <Titles
