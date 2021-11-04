@@ -35,7 +35,7 @@ export const Api = {
         })
     },
 
-    deletE: (path,id,auth)=>{
+    delete: (path,id,auth)=>{
         return fetch (Api.baseUrl+path+id,{
             method: "DELETE",
             headers: auth? new Headers(Api.authHeader()): undefined
