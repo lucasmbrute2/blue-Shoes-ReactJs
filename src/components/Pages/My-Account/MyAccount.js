@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import AccountDataInfos from '../../Account-Data-Infos/AccountDataInfos'
 import EditDelete from '../../Buttons/Edit-Delete/EditDelete'
-import Navbar from '../../Header/Navbar'
 import Titles from '../../Titles/Titles'
 import { Api } from '../../../Api/Api';
 import './MyAccount.css'
+import Header from '../../Header/Header'
 
 export default function MyAccount(props) {
     const id = localStorage.getItem("userId")
@@ -23,7 +23,7 @@ export default function MyAccount(props) {
 
     return (
         <>
-        <Navbar/>
+        <Header/>
         <div className='MyAccount-Container'>
             <div className='MyAccount'>
                 <Titles
