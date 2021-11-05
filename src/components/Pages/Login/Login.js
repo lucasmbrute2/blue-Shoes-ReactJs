@@ -23,8 +23,8 @@ export default function Login(props) {
         if (response.status===201){
            
             localStorage.setItem('JWT',body.token)
-            localStorage.setItem('user',body.user)          
-            console.log(body.user)
+            localStorage.setItem('userId',body.user.id)          
+            console.log(body.user.id)
             props.history.push('/')
         
         }else{

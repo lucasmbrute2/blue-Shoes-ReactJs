@@ -1,13 +1,17 @@
 .Data-Infos{
     display:flex;
-    width:20vw;
+    width:100%;
     justify-content: start;
     align-items: center;
     margin: 25px 0;
 }
+
 .Data-Infos h1{
-   font-size: 25px;
+    font-size: 2rem;
+    padding-right: 10px;
+    
+    width:120px
 }
 .Data-Infos h2{
-    font-size: 25px;
+    font-size: 1.6rem;
  }
