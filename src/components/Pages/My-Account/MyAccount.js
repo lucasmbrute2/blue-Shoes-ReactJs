@@ -8,18 +8,19 @@ import { Api } from '../../../Api/Api';
 import './MyAccount.css'
 
 export default function MyAccount(props) {
-    const id = localStorage.getItem("userId")
-
+    
+    const userData = localStorage.getItem("user")
+    const { id } = JSON.parse(userData)
+    
     const [user, setUser] = useState([]);
     useEffect(() => {
         const loadUser = async () => {
             const response = await Api.getById("user/single",id,true)
             const body = await response.json();
             setUser(body);
-            console.log(body);
         };
         loadUser();
-    }, [id]);
+    }, []);
 
     return (
         <>
