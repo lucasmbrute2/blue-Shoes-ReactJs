@@ -3,6 +3,7 @@ body {
 }
 .MyAccount-Container{
     display: flex;
+    
     justify-content: center;
     align-items: center;
     height:90vh;
@@ -20,10 +21,9 @@ body {
 }
 
 .MyAccount-Container .MyAccount .MyAccount-Text{
-    display: flex;
+    /* display: flex; */
     justify-content:center;
-    display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
 
 .Button-Container{
@@ -33,7 +33,7 @@ body {
     justify-content:space-around;
 }
 
-@media only screen and (max-width: 1400px) {
+@media only screen and (max-width: 1500px) {
     .MyAccount-Container .MyAccount{
         height:75vh;
     }

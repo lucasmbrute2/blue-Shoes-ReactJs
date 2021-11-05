@@ -14,7 +14,7 @@ const MenuItems = [
 const Entrar = [
   {
     title: "Minha Conta",
-    path: "/teste",
+    path: "/my-account",
     cName: "dropdown-link",
   },
   {
@@ -24,7 +24,7 @@ const Entrar = [
   },
   {
     title: "Criar Conta",
-    path: "/teste",
+    path: "/register",
     cName: "dropdown-link",
   },
 ];
