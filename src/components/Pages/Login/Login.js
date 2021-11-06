@@ -3,6 +3,7 @@ import "./Login.css";
 import { Link } from "react-router-dom";
 import SubmitButton from "../../Buttons/SubmitButton/SubmitButton"
 import { Api } from '../../../Api/Api';
+import Header from '../../Header/Header';
 
 export default function Login(props) {
     

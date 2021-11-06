@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import DropdownCategoria from "./DropdownCategoria";
-import DropdownEntrar from "./DropdownEntrar";
+import DropdownCategoria from "../Header2/DropdownCategoria";
+import DropdownEntrar from "../Header2/DropdownEntrar";
 import DarkModeToggle from "react-dark-mode-toggle";
 import "./Navbar.css";
 
