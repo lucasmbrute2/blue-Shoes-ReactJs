@@ -2,28 +2,29 @@ import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import AccountDataInfos from '../../Account-Data-Infos/AccountDataInfos'
 import EditDelete from '../../Buttons/Edit-Delete/EditDelete'
-import Navbar from '../../Header/Navbar'
 import Titles from '../../Titles/Titles'
 import { Api } from '../../../Api/Api';
 import './MyAccount.css'
+import Header from '../../Header/Header'
 
 export default function MyAccount(props) {
-    const id = localStorage.getItem("userId")
-
+    
+    const userData = localStorage.getItem("user")
+    const { id } = JSON.parse(userData)
+    
     const [user, setUser] = useState([]);
     useEffect(() => {
         const loadUser = async () => {
             const response = await Api.getById("user/single",id,true)
             const body = await response.json();
             setUser(body);
-            console.log(body);
         };
         loadUser();
-    }, [id]);
+    }, []);
 
     return (
         <>
-        <Navbar/>
+        <Header/>
         <div className='MyAccount-Container'>
             <div className='MyAccount'>
                 <Titles
