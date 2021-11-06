@@ -1,0 +1,8 @@
+.brands{
+    background-color: #000;
+    width: 100%;
+}
+
+.brands >div:nth-child(1){
+    border: 1px
+}
