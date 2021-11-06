@@ -19,14 +19,14 @@ const handleClick = () => {
 
                 <div className="leftContent">
                     <div className="card__image">
-                        <img src='https://vulcabras.vteximg.com.br/arquivos/ids/175122-1000-1000/43444797_2-604_img1.png?v=637280973031300000' alt={'product.title'}></img>
+                        <img className='card-img' src='https://vulcabras.vteximg.com.br/arquivos/ids/175122-1000-1000/43444797_2-604_img1.png?v=637280973031300000' alt={'product.title'}></img>
                     </div>
                 </div>
 
                 <div className="rightContent">
 
                     <div className="card__title">
-                        <h1>TÊNIS OLYMPIKUS GRAVIDADE FEMININO</h1>
+                        <h1 className='card-title-h1'>TÊNIS OLYMPIKUS GRAVIDADE FEMININO</h1>
                     </div>
                     
                     <div className="card__price">
@@ -39,22 +39,16 @@ const handleClick = () => {
                     </div>
 
                     <div className="card__size">
-                        <p> escolha o tamanho desejado</p>
+                        <p className='card-size-p'> escolha o tamanho desejado</p>
                         <p><select className="select">
                             <option value="valor1"> 37</option>
                             <option value="valor2"> 39</option>
                             <option value="valor3"> 41</option>
 
-                            </select></p>
+                            </select>
+                        </p>
                     </div>
-
-
-                    <button type="button" className="button-button">adicionar ao carrinho</button> 
-
-
-               
-                                
-
+                    <button type="button" className="button-button">adicionar ao carrinho</button>                                               
                 </div>
 
             </div>

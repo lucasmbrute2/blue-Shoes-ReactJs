@@ -22,7 +22,7 @@
 
 }
 
-img{
+.card-img{
     max-width: 100%;
     width: 395px;
     height: 395px;
@@ -62,7 +62,7 @@ img{
     width: 100%;
 }
 
-p{
+.card-size-p{
     padding: 0.5rem;
     display: flex;
     margin-left: 2rem;
@@ -70,7 +70,7 @@ p{
 
 }
 
-h1{
+.card-title-h1{
     margin-left: 2rem;
     padding: 0.5rem;
 }
