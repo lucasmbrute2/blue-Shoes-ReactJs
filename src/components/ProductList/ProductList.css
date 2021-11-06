@@ -1,31 +1,50 @@
-.content{
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
+.content-div{
+    margin: 30px auto;
 }
 
+.content-div-h2{
+
+    font-family: 'Poppins',sans-serif;
+
+}
 .cardImg{
-    width: 80%;
+
     align-items: center;
     text-align: center;
 
 }
 
 .cardImg-img{
-    width: 100%;
+    width: 200px;
     display: block;
-    margin-left: auto;
-    margin-right: auto 
+    margin: 0 auto;
 }
 
 .card{
-    width: 20%;
-    padding: 4rem;
-    
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card-logo{
+    width: 50px;
+    margin: 0 10px;
+}
+
+.card-container{
+    padding-bottom: 1rem;
+    background-color: #000;
 
 }
 
+.card-container:nth-child(n+2){
+    margin-left: 25px;
+}
 
+.card-container-h2{
+    text-align: center;
+    color: #fff;
+    font-family: 'Poppins',sans-serif;
+}
 
 .button{
     padding: 0.5rem;

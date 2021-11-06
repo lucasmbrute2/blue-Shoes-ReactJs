@@ -1,58 +1,35 @@
-
 import "./ProductList.css"; 
 import React, { useEffect, useState } from 'react';
+import AirForce from "../assets/airForce1.png"
+import Swoosh from "../assets/swoosh.png"
 
 export const ProductList = () => {
 
-    const [products, setProducts] = useState([{
+    const products = [{
         id: 1,
-        name: "tenis treste",
+        name: "Air Force 1",
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-        image: "https://vulcabras.vteximg.com.br/arquivos/ids/173222-1000-1000/43149751_3-007_img1--1-.png?v=637262749352770000",
-        unity_price: "R$149,99"
+        image: AirForce,
+        unity_price: "R$149,99",
+        logo: Swoosh
     },
     {
         id: 2,
-        name: "tenis weaewqe",
+        name: "Air Force 1",
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-        image: "https://vulcabras.vteximg.com.br/arquivos/ids/173222-1000-1000/43149751_3-007_img1--1-.png?v=637262749352770000",
-        unity_price: "R$189,99"
+        image: AirForce,
+        unity_price: "R$189,99",
+        logo: Swoosh
     },
     {
         id: 1,
-        name: "tenis treste",
+        name: "Air Force 1",
         description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-        image: "https://vulcabras.vteximg.com.br/arquivos/ids/173222-1000-1000/43149751_3-007_img1--1-.png?v=637262749352770000",
-        unity_price: "R$149,99"
-    },{
-        id: 1,
-        name: "tenis treste",
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-        image: "https://vulcabras.vteximg.com.br/arquivos/ids/173222-1000-1000/43149751_3-007_img1--1-.png?v=637262749352770000",
-        unity_price: "R$149,99"
-    },{
-        id: 1,
-        name: "tenis treste",
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-        image: "https://vulcabras.vteximg.com.br/arquivos/ids/173222-1000-1000/43149751_3-007_img1--1-.png?v=637262749352770000",
-        unity_price: "R$149,99"
-    },
-    {
-        id: 1,
-        name: "tenis treste",
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-        image: "https://vulcabras.vteximg.com.br/arquivos/ids/173222-1000-1000/43149751_3-007_img1--1-.png?v=637262749352770000",
-        unity_price: "R$149,99"
-    },
-    {
-        id: 1,
-        name: "tenis treste",
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-        image: "https://vulcabras.vteximg.com.br/arquivos/ids/173222-1000-1000/43149751_3-007_img1--1-.png?v=637262749352770000",
-        unity_price: "R$149,99"
-    },
-        
-    ]);
+        image: AirForce,
+        unity_price: "R$149,99",
+        logo: Swoosh
+    }       
+    ];
 
     //useEffect(() => {
     //    const loadProductList = async () => {
@@ -66,34 +43,23 @@ export const ProductList = () => {
     //    loadProductList();
     //}, []);
 
-
-
-
-    const listProducts = products.map((product) =>
-    <div className="card" key={product.id}>
-        <div className="cardImg">
-            <img src={product.image} className='cardImg-img'/>
-        </div>
-        <h2>{product.name}</h2>
-
-        <div className="CardInfo" >
-            
-            <p className='cardInfo-p'> {product.description} </p>
-            <p className='cardInfo-p'> {product.unity_price}</p>
-            <button type="button" className="button"> conferir </button>
-
-
-        </div>
-
-    </div>
-
-    );
-
     return(
-        <div className="content">
+        <div className="content container">           
+            <div className='content-div'>
+                <h2 className='content-div-h2'>DESTAQUES</h2>
+            </div>                
+            <div className='card'>
+                {products.map(product=>(
+                    <div className='card-container' key={product.id}>
+                        <img src={product.logo} className='card-logo'></img>
+                        <div className="cardImg">                    
+                            <img src={product.image} className='cardImg-img'/>
+                        </div>   
+                        <h2 className='card-container-h2'>{product.name}</h2>
 
-            {listProducts}
-
+                    </div>               
+                ))}         
+            </div>
         </div>
     )
 }
