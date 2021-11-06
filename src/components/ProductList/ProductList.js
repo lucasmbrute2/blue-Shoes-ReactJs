@@ -72,14 +72,14 @@ export const ProductList = () => {
     const listProducts = products.map((product) =>
     <div className="card" key={product.id}>
         <div className="cardImg">
-            <img src={product.image} />
+            <img src={product.image} className='cardImg-img'/>
         </div>
         <h2>{product.name}</h2>
 
         <div className="CardInfo" >
             
-            <p> {product.description} </p>
-            <p> {product.unity_price}</p>
+            <p className='cardInfo-p'> {product.description} </p>
+            <p className='cardInfo-p'> {product.unity_price}</p>
             <button type="button" className="button"> conferir </button>
 
 
