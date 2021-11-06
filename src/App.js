@@ -8,6 +8,7 @@ import Login from "./components/Pages/Login/Login";
 import Register from "./components/Pages/Register/Register";
 import ViewProduct from "./components/Pages/ViewProduct/ViewProduct";
 import ProductCard from "./components/ProductCard/ProductCard";
+import Cart from "./components/Pages/Cart/Cart";
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
         <Route path='/login' component={Login}/>
         <Route path='/register' component={Register}/>
         <Route path='/view' component={ViewProduct}/>
+        <Route path='/cart' component={Cart}/>
       </Switch>
     </Router>
   );
