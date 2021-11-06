@@ -1,15 +1,15 @@
 import React from "react";
 import "./Home.css";
 import Footer from "../../Footer/Footer"
-import Navbar from "../../Header/Navbar";
 import { ProductList } from "../../ProductList/ProductList";
-
+import Header from "../../Header/Header";
 
 export default function Home() {
   return(
     <>
-      <Navbar/>
-      <div><ProductList/></div>
+      <Header/>
+        <ProductList/>
+        <div>Home</div>
       <Footer/>
     </>
   ) 
