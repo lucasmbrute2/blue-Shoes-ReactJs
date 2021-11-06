@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom'
 import { Api } from '../../../Api/Api'
 import AccountDataInputs from '../../Account-Data-Inputs/AccountDataInputs'
 import EditDelete from '../../Buttons/Edit-Delete/EditDelete'
-import Header from '../../Header/Header'
 import Titles from '../../Titles/Titles'
 import './MyAccountEdit.css'
 
@@ -53,7 +52,6 @@ export default function MyAccountEdit() {
     }
     return (
         <>
-        <Header/>
         <div className='MyAccount-Container'>
             <form onSubmit={HandleSubmit}>
                 <div className='MyAccountEdit'>

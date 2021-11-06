@@ -9,10 +9,12 @@ import Register from "./components/Pages/Register/Register";
 import ViewProduct from "./components/Pages/ViewProduct/ViewProduct";
 import ProductCard from "./components/ProductCard/ProductCard";
 import Cart from "./components/Pages/Cart/Cart";
+import Header from "./components/Header/Header";
 
 function App() {
   return (
     <Router>
+      <Header/>
       <Switch>
         <Route path="/" exact={true} component = {Home}/>
         <Route path="/my-account" component={MyAccount} />
