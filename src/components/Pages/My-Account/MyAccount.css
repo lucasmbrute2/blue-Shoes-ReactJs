@@ -3,7 +3,6 @@ body {
 }
 .MyAccount-Container{
     display: flex;
-    
     justify-content: center;
     align-items: center;
     height:90vh;
@@ -21,7 +20,6 @@ body {
 }
 
 .MyAccount-Container .MyAccount .MyAccount-Text{
-    /* display: flex; */
     justify-content:center;
     flex-direction: column;
 }

@@ -1,0 +1,44 @@
+.Cart-Container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:90vh;
+    background-color: #E6E6E6;
+}
+
+.Cart-Container .Cart h1{
+    padding:50px 0 20px 0;
+    font-size:45px;
+}
+
+.Cart-Container .Cart{
+    display: flex;
+    flex-direction: column;
+    /* justify-content:center; */
+    background-color:#F9F9F9;
+    height:60vh;
+    width:50vw;
+    border-radius:10px;
+}
+.Cart-Container .Cart .my-products{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.Total-Price{
+    display: flex;
+    align-items: center;
+    justify-content:start;
+    width: 80%;
+    margin-top:10px;
+}
+
+.Total-Price p{
+    font-size:25px;
+    font-weight: 700;
+    margin-left: 15px;
+}
+
+.Buy{
+    margin-top:25px;
+}
