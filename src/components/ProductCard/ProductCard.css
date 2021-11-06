@@ -8,17 +8,18 @@
 
 .product{
     display: flex;
-    width: 80%;
+    width: 90%;
     align-items: center;
     justify-content: center;
-    padding: 1rem;
+    padding: 3rem;
 
 }
 
 .leftContent{
     display: flex;
     padding: 3rem;
-    margin-right: 10rem;
+    margin-right: 0;
+
 }
 
 img{
@@ -31,11 +32,23 @@ img{
 
     display: flex;
     flex-wrap: wrap;
+    width: 40%;
+    margin-left: 2rem;
+
 }
 
 .card__price{
     width: 100%;
+
 }
+
+.card__price__price{
+    font-size: x-large;
+    margin-bottom: 2rem;
+    font-family: 'Opens-Sans', sans-serif;
+
+}
+
 
 .card__color{
     width: 100%;
@@ -47,4 +60,34 @@ img{
 
 .card__size{
     width: 100%;
+}
+
+p{
+    padding: 0.5rem;
+    display: flex;
+    margin-left: 2rem;
+
+
+}
+
+h1{
+    margin-left: 2rem;
+    padding: 0.5rem;
+}
+
+
+.button-button{
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+    padding: 0.7rem;
+    border-radius: .5rem;
+    border: none;
+    background-color: rgba(87, 112, 221, 0.822);
+    color: white;
+    transition: ease-in-out .7s;
+    margin-top: 2rem;
+}
+
+.button-button:hover{
 }

@@ -6,6 +6,8 @@ import MyAccountEdit from "./components/Pages/My-Account/MyAccountEdit";
 import Home from "./components/Pages/Home/Home";
 import Login from "./components/Pages/Login/Login";
 import Register from "./components/Pages/Register/Register";
+import ViewProduct from "./components/Pages/ViewProduct/ViewProduct";
+import ProductCard from "./components/ProductCard/ProductCard";
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
         <Route path="/my-account-edit" component={MyAccountEdit} />
         <Route path='/login' component={Login}/>
         <Route path='/register' component={Register}/>
+        <Route path='/view' component={ViewProduct}/>
       </Switch>
     </Router>
   );
