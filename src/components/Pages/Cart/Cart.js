@@ -1,13 +1,13 @@
 import React from 'react'
 import EditDelete from '../../Buttons/Edit-Delete/EditDelete'
 import CardProduct from '../../Card-Product/CardProduct'
-import Navbar from '../../Header/Navbar'
+import Header from '../../Header/Header'
 import './Cart.css'
 
 export default function Cart() {
     return (
-        <>
-        <Navbar/>
+        <div className='cart'>
+        <Header/>
         <div className="Cart-Container">
             <div className="Cart">
                 <div className="my-products">
@@ -29,6 +29,6 @@ export default function Cart() {
                 </div>
             </div>
         </div>
-        </>
+        </div>
     )
 }
