@@ -19,11 +19,12 @@ export default function Login(props) {
     
         const response = await Api.post("auth/login",payload)
         const body = await response.json()
-
+        console.log(typeof JSON.stringify(body.user))
+        
         if (response.status===201){
            
             localStorage.setItem('JWT',body.token)
-            localStorage.setItem('userId',body.user.id)          
+            localStorage.setItem('user',JSON.stringify(body.user))          
             console.log(body.user.id)
             props.history.push('/')
         
