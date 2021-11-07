@@ -1,3 +1,6 @@
+.content{
+    margin-bottom: 6rem;
+}
 .content-div{
     margin: 30px auto;
 }
@@ -23,6 +26,7 @@
 .card{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
 }
 
 .card-logo{
@@ -34,10 +38,6 @@
     padding-bottom: 1rem;
     background-color: #000;
 
-}
-
-.card-container:nth-child(n+2){
-    margin-left: 25px;
 }
 
 .card-container-h2{
