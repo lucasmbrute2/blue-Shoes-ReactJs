@@ -4,11 +4,13 @@ import Footer from "../../Footer/Footer"
 import { ProductList } from "../../ProductList/ProductList";
 import Header from "../../Header/Header";
 import Brands from "../../Brands/Brands";
+import HomeCarousel from "../../Home-Carousel/HomeCarousel";
 
 export default function Home() {
   return(
     <>
       <Header/>
+        <HomeCarousel/>
         <ProductList/>
         <Brands/>
         <div>Home</div>
