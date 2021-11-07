@@ -40,7 +40,7 @@
 .header-ul{
     display: flex;
     list-style: none;
-
+    margin-bottom: 0;
 }
 
 .header-li{

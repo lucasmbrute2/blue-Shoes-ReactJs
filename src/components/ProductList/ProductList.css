@@ -8,7 +8,7 @@
 .content-div-h2{
 
     font-family: 'Poppins',sans-serif;
-
+    font-weight: 600;
 }
 .cardImg{
 
@@ -23,7 +23,7 @@
     margin: 0 auto;
 }
 
-.card{
+.card-container{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
@@ -34,7 +34,7 @@
     margin: 0 10px;
 }
 
-.card-container{
+.card-container-div{
     padding-bottom: 1rem;
     background-color: #000;
 

@@ -48,9 +48,9 @@ export const ProductList = () => {
             <div className='content-div'>
                 <h2 className='content-div-h2'>DESTAQUES</h2>
             </div>                
-            <div className='card'>
+            <div className='card-container'>
                 {products.map(product=>(
-                    <div className='card-container' key={product.id}>
+                    <div className='card-container-div' key={product.id}>
                         <img src={product.logo} className='card-logo'></img>
                         <div className="cardImg">                    
                             <img src={product.image} className='cardImg-img'/>
