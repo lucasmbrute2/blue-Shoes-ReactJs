@@ -2,6 +2,7 @@ import React from 'react'
 import EditDelete from '../../Buttons/Edit-Delete/EditDelete'
 import CardProduct from '../../Card-Product/CardProduct'
 import Header from '../../Header/Header'
+import Footer from '../../Footer/Footer'
 import './Cart.css'
 
 export default function Cart() {
@@ -29,6 +30,7 @@ export default function Cart() {
                 </div>
             </div>
         </div>
+        <Footer/>
         </div>
     )
 }
