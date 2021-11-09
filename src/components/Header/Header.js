@@ -1,12 +1,14 @@
 import "./Header.css" 
 import blueShoes from "../assets/blueShoes.png"
 import { Link } from "react-router-dom"
+import { useState } from "react"
 
 export default function Header(){
     
     const userData = localStorage.getItem('user')
     const userDataObject = JSON.parse(userData)
 
+    const [cartArray,setCartArray] = useState([])
     return(
         <div className='header '>
             <div className='header-container container'>
@@ -14,7 +16,7 @@ export default function Header(){
                     <img src={blueShoes}className='header-logo'/>   
                 </Link>
                 <div className='header-div-input'>
-                    <input type='text' placeholder='search' className='header-searchBar'></input>
+                    <input type='text' placeholder='Procurar' className='header-searchBar'></input>
                     <i class="fas fa-search"></i>
                 </div>
             
@@ -22,19 +24,26 @@ export default function Header(){
                     <nav className='header-nav'>
                         <ul className='header-ul'>
                             <li className='header-li'>
-                                Home
-                            </li>
-                            <li className='header-li'>
-                                Settings
+                                <Link to='/'className='link-fa'>
+                                <i class="fas fa-home"></i> Home
+                                </Link>
                             </li>
                             <li className='header-li'>
                                 {userDataObject? 
                                 <Link to='/my-account' className='header-li-link'>
-                                   <span className='header-li-span'>Olá,</span>{userDataObject.name}
+                                   <span className='header-li-span'>Olá,</span>{userDataObject.nome}
                                 </Link> 
                                 :<Link to='/login' className='header-li-link-signIn'>
                                     Entrar
                                 </Link>}                            
+                            </li>
+                            <li className='header-li li-cart'>
+                                <Link to='/cart'>
+                                    <i class="fas fa-shopping-cart"></i>  
+                                    <span className='header-li-cartArray'>
+                                        {cartArray.length}
+                                    </span>
+                                </Link>
                             </li>
                         </ul>
                     </nav>

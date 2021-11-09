@@ -12,7 +12,6 @@ export default function Home() {
       <HomeCarousel/>
       <ProductList/>
       <Brands/>
-      <div>Home</div>
       <Footer/>
     </>
   ) 

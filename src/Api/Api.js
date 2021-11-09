@@ -25,7 +25,7 @@ export const Api = {
     }),
     
     update: (path,body,id,auth)=>{
-        return fetch(Api.baseUrl+path+id,{
+        return fetch(Api.baseUrl+path+'/'+id,{
             method: "PUT",
             headers: new Headers({
                 "Content-type": "application/json",
