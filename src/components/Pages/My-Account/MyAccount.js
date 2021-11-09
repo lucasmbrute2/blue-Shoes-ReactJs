@@ -14,7 +14,7 @@ export default function MyAccount(props) {
     const [user, setUser] = useState([]);
     useEffect(() => {
         const loadUser = async () => {
-            const response = await Api.getById("user/single",id,true)
+            const response = await Api.getById("usuario",id,true)
             const body = await response.json();
             setUser(body);
         };

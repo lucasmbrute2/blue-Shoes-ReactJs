@@ -15,7 +15,7 @@ export default function MyAccountEdit() {
     const [user, setUser] = useState([]);
     useEffect(() => {
         const loadUser = async () => {
-            const response = await Api.getById("user/single",id,true)
+            const response = await Api.getById("usuario",id,true)
             const body = await response.json();
             setUser(body);
         };
@@ -25,19 +25,19 @@ export default function MyAccountEdit() {
     const HandleSubmit = async (e)=>{
         e.preventDefault()
         
-        const name = e.target.name.value
+        const nome = e.target.nome.value
         const email = e.target.email.value
-        const password = e.target.password.value
+        const senha = e.target.senha.value
         const cpf = e.target.cpf.value
 
         const payload = {
-            name,
+            nome,
             email,
-            password,
-            cpf,
+            senha,
+            cpf
         }
     
-        const response = await Api.update("user/update/",payload,id,true)
+        const response = await Api.update("usuario/atualizar",payload,id,true)
         const body = await response.json();
         setUser(body);
         console.log(body);
@@ -61,19 +61,19 @@ export default function MyAccountEdit() {
                     <div className='MyAccount-Text'>
                         <div className='Data-Inputs'>
                             <h1>Nome</h1>
-                            <input type="text" name='name' defaultValue={user.name}/>
+                            <input type="text" name='name' defaultValue={user.nome}/>
                         </div>
                         <div className='Data-Inputs'>
                             <h1>Email</h1>
-                            <input type="text" name='email' value={user.email} readonly/>
+                            <input type="text" name='email' defaultValue={user.email} readonly/>
                         </div>
                         <div className='Data-Inputs'>
                             <h1>CPF</h1>
-                            <input type="number" name='cpf' value={user.cpf} readonly/>
+                            <input type="text" name='cpf' defaultValue={user.cpf} readonly/>
                         </div>
                         <div className='Data-Inputs'>
                             <h1>Senha</h1>
-                            <input type="text" name='password' defaultValue={user.password}/>
+                            <input type="text" name='password' defaultValue={user.senha}/>
                         </div>
                     </div>
                     <div className='Button-Container'>

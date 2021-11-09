@@ -10,22 +10,19 @@ export default function Login(props) {
         e.preventDefault()
         
         const email = e.target.email.value
-        const password = e.target.password.value
+        const senha = e.target.senha.value
 
         const payload = {
             email,
-            password
+            senha
         }
     
         const response = await Api.post("auth/login",payload)
         const body = await response.json()
-        console.log(typeof JSON.stringify(body.user))
         
         if (response.status===201){
-           
             localStorage.setItem('JWT',body.token)
-            localStorage.setItem('user',JSON.stringify(body.user))          
-            console.log(body.user.id)
+            localStorage.setItem('user',JSON.stringify(body.usuario))          
             props.history.push('/')
         
         }else{
@@ -43,7 +40,7 @@ export default function Login(props) {
                 </div>
             
                 <div className='form-div'>
-                    <input type='password' className='form-div-input' placeholder=' ' autoComplete={false} name='password' required></input>
+                    <input type='password' className='form-div-input' placeholder=' ' autoComplete={false} name='senha' required></input>
                     <label className='form-div-label'>Senha</label>
                 </div>
                 <div>
