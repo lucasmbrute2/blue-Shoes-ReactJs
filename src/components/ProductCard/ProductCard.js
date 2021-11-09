@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from "react";
 import "./ProductCard.css"; 
 import { useHistory } from "react-router";
 
@@ -8,13 +8,8 @@ export default function ProductCard({product}) {
 
 
 
-const handleClick = () => {
-    history.push(`/product/view/${product.id}`);
-};
-
-
     return (
-        <div className="products" onClick={handleClick}>
+        <div className="products">
             <div className="product">
 
                 <div className="leftContent">
@@ -34,19 +29,46 @@ const handleClick = () => {
                     </div>
 
                     <div className="card__color">
-                        <p className="card__color__color">  escolha a cor desejada</p>
-                        <p className="card__color__color">Azul</p>
+                        <p className="card__color__color">  Escolha a cor desejada:</p>
+                        <ul className="color_options">
+                            <li>
+                                <button className="color_choice" type="button" ></button>
+
+                            </li>
+                            <li>
+                                <button className="color_choice" type="button" ></button>
+
+                            </li>
+                            <li>
+                                <button className="color_choice" type="button" ></button>
+
+                            </li>
+                            <li>
+                                <button className="color_choice" type="button" ></button>
+
+                            </li>
+                        </ul>
                     </div>
 
                     <div className="card__size">
-                        <p className='card-size-p'> escolha o tamanho desejado</p>
-                        <p><select className="select">
-                            <option value="valor1"> 37</option>
-                            <option value="valor2"> 39</option>
-                            <option value="valor3"> 41</option>
+                        <p className='card-size-p'> Escolha o tamanho desejado:</p>
+                            <ul className="size_options"> 
+                                <li>
+                                        <button className="size_choice" type="button">37</button>
 
-                            </select>
-                        </p>
+                                    </li>
+                                    <li>
+                                        <button className="size_choice" type="button">39</button>
+
+                                    </li>
+                                    <li>
+                                        <button className="size_choice" type="button">41</button>
+
+                                </li>
+
+                            </ul>
+
+
                     </div>
                     <button type="button" className="button-button">adicionar ao carrinho</button>                                               
                 </div>

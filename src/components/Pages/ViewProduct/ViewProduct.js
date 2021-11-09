@@ -4,6 +4,8 @@ import ProductCard from "../../ProductCard/ProductCard";
 import "./ViewProduct.css";
 import { useHistory } from "react-router";
 
+
+
 export default function ViewProduct (props)  {
 
     const id = props.match.params.id;
@@ -34,10 +36,10 @@ export default function ViewProduct (props)  {
 
 
     return (
+
         <div className="view">
             <div className="view-product">
                 <ProductCard product={product} />
-
             </div>
 
         </div>
