@@ -31,7 +31,7 @@ export default function MyAccount(props) {
                 <div className='MyAccount-Text'>
                     <AccountDataInfos
                     Info='Nome:'
-                    dbInfo={user.name}
+                    dbInfo={user.nome}
                     />
                     <AccountDataInfos
                     Info='Email:'
@@ -43,7 +43,7 @@ export default function MyAccount(props) {
                     />
                     <AccountDataInfos
                     Info='Senha:'
-                    dbInfo={user.password}
+                    dbInfo={user.senha}
                     />
                 </div>
                 <div className='Button-Container'>
