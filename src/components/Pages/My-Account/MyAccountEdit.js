@@ -61,7 +61,7 @@ export default function MyAccountEdit() {
                     <div className='MyAccount-Text'>
                         <div className='Data-Inputs'>
                             <h1>Nome</h1>
-                            <input type="text" name='name' defaultValue={user.nome}/>
+                            <input type="text" name='nome' defaultValue={user.nome}/>
                         </div>
                         <div className='Data-Inputs'>
                             <h1>Email</h1>
@@ -73,7 +73,7 @@ export default function MyAccountEdit() {
                         </div>
                         <div className='Data-Inputs'>
                             <h1>Senha</h1>
-                            <input type="text" name='password' defaultValue={user.senha}/>
+                            <input type="text" name='senha' defaultValue={user.senha}/>
                         </div>
                     </div>
                     <div className='Button-Container'>
