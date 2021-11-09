@@ -1,14 +1,13 @@
 import React from 'react'
 import EditDelete from '../../Buttons/Edit-Delete/EditDelete'
 import CardProduct from '../../Card-Product/CardProduct'
-import Header from '../../Header/Header'
 import Footer from '../../Footer/Footer'
+
 import './Cart.css'
 
 export default function Cart() {
     return (
         <div className='cart'>
-        <Header/>
         <div className="Cart-Container">
             <div className="Cart">
                 <div className="my-products">
