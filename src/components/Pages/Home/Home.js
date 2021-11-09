@@ -9,11 +9,10 @@ import HomeCarousel from "../../Home-Carousel/HomeCarousel";
 export default function Home() {
   return(
     <>
-      <Header/>
-        <HomeCarousel/>
-        <ProductList/>
-        <Brands/>
-        <div>Home</div>
+      <HomeCarousel/>
+      <ProductList/>
+      <Brands/>
+      <div>Home</div>
       <Footer/>
     </>
   ) 

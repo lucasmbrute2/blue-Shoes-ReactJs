@@ -5,7 +5,6 @@ import EditDelete from '../../Buttons/Edit-Delete/EditDelete'
 import Titles from '../../Titles/Titles'
 import { Api } from '../../../Api/Api';
 import './MyAccount.css'
-import Header from '../../Header/Header'
 
 export default function MyAccount(props) {
     
@@ -24,7 +23,6 @@ export default function MyAccount(props) {
 
     return (
         <>
-        <Header/>
         <div className='MyAccount-Container'>
             <div className='MyAccount'>
                 <Titles
