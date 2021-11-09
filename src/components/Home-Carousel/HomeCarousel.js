@@ -17,14 +17,14 @@ export default function HomeCarousel() {
         <Carousel.Item>
             <img
             className="d-block w-100"
-            src="https://cdn.wallpapersafari.com/81/43/tKqRD9.jpg"
+            src="https://coolwallpapers.me/picsup/3101295-athlete_jordans_jumpman_kicks_nike_shoes_sidewalk_sneakers_socks_sports_street.jpg"
             alt="Second slide"
             />
         </Carousel.Item>
         <Carousel.Item>
             <img
             className="d-block w-100"
-            src="https://cdn.shopify.com/s/files/1/0491/4266/1278/files/imagem_2021-09-06_015541.png?v=1630904145"
+            src="https://wallpaperforu.com/wp-content/uploads/2020/08/sneaker-wallpaper-20082217135426-scaled.jpg"
             alt="Third slide"
             />
         </Carousel.Item>
