@@ -31,7 +31,7 @@ export default function Header(){
                             <li className='header-li'>
                                 {userDataObject? 
                                 <Link to='/my-account' className='header-li-link'>
-                                   <span className='header-li-span'>Olá,</span>{userDataObject.name}
+                                   <span className='header-li-span'>Olá,</span>{userDataObject.nome}
                                 </Link> 
                                 :<Link to='/login' className='header-li-link-signIn'>
                                     Entrar
