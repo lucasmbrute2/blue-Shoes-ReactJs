@@ -37,9 +37,10 @@ export default function Register(props){
             localStorage.setItem('JWT',body.token)
             localStorage.setItem('user',JSON.stringify(body.usuario))
             props.history.push('/')
-        
+            
         }else{
-            alert('Algo deu errado!')
+            console.log(response)
+            alert(response.error)
         }
     }
     
