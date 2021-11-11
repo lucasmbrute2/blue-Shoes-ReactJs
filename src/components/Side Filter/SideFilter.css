@@ -11,7 +11,6 @@
     border-bottom: 1px solid rgb(0, 0, 0);
     width:80%;
 }
-
 details summary {
     padding: 0.5rem 0;
     position: relative;
@@ -30,11 +29,11 @@ details summary:after {
     right: 0;
     font-weight: 200;
     transform-origin: center;
-    transition: 200ms linear;
+    transition: .3s ease-out;
   }
 
   details[open] summary:after {
-    transform: rotate(45deg);
+    transform: rotate(90deg);
     font-size: 2rem;
   }
 
@@ -43,4 +42,3 @@ details summary:after {
     margin: 5px;
     text-align: center;
   }
-  
