@@ -32,8 +32,8 @@
 
     display: flex;
     flex-wrap: wrap;
-    width: 40%;
-    margin-left: 2rem;
+    width: 35%;
+    margin-left: 4rem;
 
 }
 
@@ -44,50 +44,113 @@
 
 .card__price__price{
     font-size: x-large;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     font-family: 'Opens-Sans', sans-serif;
+    color: rgba(0, 0, 0, 0.658);
+
 
 }
 
 
 .card__color{
     width: 100%;
+    margin-bottom: 2rem;
+    color: rgba(0, 0, 0, 0.658);
+
+
 }
 
 .card__title{
     width: 100%;
+
+
 }
 
 .card__size{
     width: 100%;
+
 }
 
 .card-size-p{
-    padding: 0.5rem;
+    
     display: flex;
-    margin-left: 2rem;
-
+    color: rgba(0, 0, 0, 0.658);
 
 }
 
-.card-title-h1{
-    margin-left: 2rem;
-    padding: 0.5rem;
+
+
+.select{
+    width: 40%;
+    color: rgba(0, 0, 0, 0.658);
 }
+
+
+
 
 
 .button-button{
     text-align: center;
     display: block;
-    margin: 0 auto;
     padding: 0.7rem;
     border-radius: .5rem;
     border: none;
     background-color: rgba(87, 112, 221, 0.822);
     color: white;
     transition: ease-in-out .7s;
-    margin-top: 2rem;
+    margin-top: 1rem;
 }
 
-.button-button:hover{
+
+.radio{
+    list-style-type: none;
+
+}
+
+.color_options{
+    list-style-type: none;
+    display: flex;
+    padding-left: 0;
+
+}
+
+.color_options li{
+    margin-right: 1rem;
+}
+
+
+.product-size{
+    color: rgba(0, 0, 0, 0.658);
+    text-decoration: none;
+    padding: 0.2rem;
+    
+}
+
+.color_choice{
+    padding: 0.6rem;
+    border-radius: 3rem;
+    border-color: black;
+    border: solid 1px;
+
+}
+
+
+.size_options{
+    display: flex;
+    padding-left: 0;
+}
+
+.size_options li{
+    list-style-type: none;
+    padding-right: 1rem;
+}
+
+.size_choice{
+    padding: 0.4rem;
+    background-color: white;
+    border-radius: 0.4rem;
+    border-color: black;
+    border: solid 1px;
+    font-size: 16px;
+    
 }
