@@ -1,5 +1,7 @@
 .Cart{
     height: calc(100vh - var(--header-height));
+    width: calc(100% - 150px);
+    margin: 0 auto;
     display: flex;
 }
 .Cart-Container{   
@@ -89,7 +91,7 @@
 }
 .items-description-span{
 
-    color: #ccc;
+    color: rgba(0, 0, 0, 0.856);
 }
 .price-number{
     

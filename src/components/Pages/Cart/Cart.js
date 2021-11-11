@@ -43,7 +43,7 @@ export default function Cart() {
 
     return (
         <div className='Cart header-height'>
-            <div className="Cart-Container ">
+            <div className="Cart-Container">
                 <h1 className='Cart-Container-h1'>Carrinho</h1>
                 <div className='cardProduct-div'>
                     <div className='cardProduct-div-details'>
