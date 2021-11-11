@@ -10,6 +10,7 @@ import ViewProduct from "./components/Pages/ViewProduct/ViewProduct";
 import ProductCard from "./components/ProductCard/ProductCard";
 import Cart from "./components/Pages/Cart/Cart";
 import Header from "./components/Header/Header";
+import Products from "./components/Pages/Products/Products";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/register' component={Register}/>
         <Route path='/view' component={ViewProduct}/>
         <Route path='/cart' component={Cart}/>
+        <Route path='/products' component={Products}/>
       </Switch>
     </Router>
   );
