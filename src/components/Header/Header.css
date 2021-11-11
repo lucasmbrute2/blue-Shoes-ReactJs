@@ -1,7 +1,7 @@
 .header{
     width: 100%;  
     box-shadow: 0 10px 25px rgba(92, 99, 105, 0.068);
-    
+    height: var(--header-height);
 }
 .header-container{
     display: flex;
