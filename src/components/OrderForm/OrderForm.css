@@ -1,0 +1,78 @@
+.orderForm{
+    margin: 100px;
+    width:410px;
+    height: 420px;
+    background-color: rgba(204, 204, 204, 0.514);
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(92, 99, 105, .2);
+}
+
+.container{
+    width: calc(100% - 20px);
+}
+
+.orderForm-div-h2{
+    border-bottom: 1px solid #ccc;
+    padding: 1rem 0 .5rem 0;
+}
+.orderForm-div-h2> h2 {
+    
+    font-family: 'Roboto',sans-serif;
+    font-size: 25px;
+}
+
+
+.orderForm-div-p{
+
+    padding: 2rem 0;
+    border-bottom: 1px solid #ccc;
+    
+}
+
+.container-p{
+    display: flex;
+    justify-content: space-between;
+    color:  rgba(0, 0, 0, 0.925);
+    
+}
+
+.container-p>p{
+    font-family: 'Poppins',sans-serif;
+    letter-spacing: -.5px;
+}
+
+.container-select>select{
+
+    width: 100%;
+    height: 30px;
+    outline: none;
+    box-sizing: border-box;
+    padding-left: 1rem;
+    font-family: 'Roboto',sans-serif;
+}
+
+.orderForm-div-checkout{
+    padding-top: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.orderForm-div-checkout >h2{
+    
+    font-family: 'Roboto',sans-serif;
+    font-size: 20px;
+    margin: 0;
+}
+
+.orderForm-div-checkout >p{
+    margin: 0;
+    font-family: 'Poppins',sans-serif;
+    letter-spacing: -.5px;
+}
+
+#submitButton-orderForm{
+    display: block;
+    margin-top: 35px;
+}

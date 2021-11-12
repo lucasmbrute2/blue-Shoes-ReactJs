@@ -10,7 +10,7 @@ export default function Header(){
 
     const [cartArray,setCartArray] = useState([])
     return(
-        <div className='header '>
+        <div className='header header-height'>
             <div className='header-container container'>
                 <Link to='/'>
                     <img src={blueShoes}className='header-logo'/>   
