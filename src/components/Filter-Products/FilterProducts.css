@@ -23,7 +23,7 @@
     align-items: center;
 }
 
-.filter-products-titles p,h1{
+.filter-products-titles p, .filter-products-titles h1{
     font-size: 20px;
     height:40px;
     margin-left: 10px;
