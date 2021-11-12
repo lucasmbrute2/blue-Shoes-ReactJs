@@ -1,12 +1,10 @@
 import React, { useEffect, useState } from "react";
-import "./ProductCard.css"; 
+import "./ProductCardView.css"; 
 import { useHistory } from "react-router";
 
-export default function ProductCard({product}) {
+export default function ProductCardView({product}) {
 
     const history = useHistory();
-
-
 
     return (
         <div className="products">
