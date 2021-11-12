@@ -1,17 +1,14 @@
 import "./Header.css" 
 import blueShoes from "../assets/blueShoes.png"
 import { Link } from "react-router-dom"
-import { useContext, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import { Context } from "../../context/CtxApp"
 
 export default function Header(){
     
-    const userData = localStorage.getItem('user')
-    const userDataObject = JSON.parse(userData)
-
-    const { header } = useContext(Context)
-    
+    const { header, user } = useContext(Context)
     const [cartArray,setCartArray] = useState([])
+
     return(
         <div className='header header-height'>
             <div className='header-container container'>
@@ -34,7 +31,7 @@ export default function Header(){
                             <li className='header-li'>
                                 {header? 
                                 <Link to='/my-account' className='header-li-link'>
-                                   <span className='header-li-span'>Olá,</span>{userDataObject.nome}
+                                   <span className='header-li-span'>Olá,</span>{user.nome}
                                 </Link> 
                                 :<Link to='/login' className='header-li-link-signIn'>
                                     Entrar

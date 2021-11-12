@@ -4,15 +4,14 @@ import { Link } from "react-router-dom";
 import SubmitButton from "../../Buttons/SubmitButton/SubmitButton"
 import { Api } from '../../../Api/Api';
 import { Context } from '../../../context/CtxApp';
-import { useLocalStorage } from "react-use"
+
 
 export default function Login(props) {
     
-    const [jwt,setJwt] = useLocalStorage('JWT','')
-    const [user,setUser] = useLocalStorage('user','')
+
     // =====CONTEXT====
 
-        const { setHeader } = useContext(Context)
+    const { setHeader , setUser, setJwt} = useContext(Context)
 
     // ======FUNÇÃO DE SUBMIT========
     const HandleSubmit = async (e)=>{
