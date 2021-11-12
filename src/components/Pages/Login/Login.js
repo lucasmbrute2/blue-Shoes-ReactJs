@@ -1,11 +1,20 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import "./Login.css"; 
 import { Link } from "react-router-dom";
 import SubmitButton from "../../Buttons/SubmitButton/SubmitButton"
 import { Api } from '../../../Api/Api';
+import { Context } from '../../../context/CtxApp';
+import { useLocalStorage } from "react-use"
 
 export default function Login(props) {
     
+    const [jwt,setJwt] = useLocalStorage('JWT','')
+    const [user,setUser] = useLocalStorage('user','')
+    // =====CONTEXT====
+
+        const { setHeader } = useContext(Context)
+
+    // ======FUNÇÃO DE SUBMIT========
     const HandleSubmit = async (e)=>{
         e.preventDefault()
         
@@ -19,10 +28,10 @@ export default function Login(props) {
     
         const response = await Api.post("auth/login",payload)
         const body = await response.json()
-        
         if (response.status===201){
-            localStorage.setItem('JWT',body.token)
-            localStorage.setItem('user',JSON.stringify(body.usuario))          
+            setJwt(body.token)
+            setUser(body.usuario)
+            setHeader(true)
             props.history.push('/')
         
         }else{

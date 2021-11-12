@@ -1,13 +1,16 @@
 import "./Header.css" 
 import blueShoes from "../assets/blueShoes.png"
 import { Link } from "react-router-dom"
-import { useState } from "react"
+import { useContext, useState } from "react"
+import { Context } from "../../context/CtxApp"
 
 export default function Header(){
     
     const userData = localStorage.getItem('user')
     const userDataObject = JSON.parse(userData)
 
+    const { header } = useContext(Context)
+    
     const [cartArray,setCartArray] = useState([])
     return(
         <div className='header header-height'>
@@ -29,7 +32,7 @@ export default function Header(){
                                 </Link>
                             </li>
                             <li className='header-li'>
-                                {userDataObject? 
+                                {header? 
                                 <Link to='/my-account' className='header-li-link'>
                                    <span className='header-li-span'>Olá,</span>{userDataObject.nome}
                                 </Link> 
