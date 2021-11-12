@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
 import AccountDataInfos from '../../Account-Data-Infos/AccountDataInfos'
-import EditDelete from '../../Buttons/Edit-Delete/EditDelete'
 import Titles from '../../Titles/Titles'
 import { Api } from '../../../Api/Api';
 import './MyAccount.css'
@@ -41,18 +39,6 @@ export default function MyAccount(props) {
                     Info='CPF:'
                     dbInfo={user.cpf}
                     />
-                    <AccountDataInfos
-                    Info='Senha:'
-                    dbInfo={user.senha}
-                    />
-                </div>
-                <div className='Button-Container'>
-                    <Link to='my-account-edit'>
-                    <EditDelete
-                    Title='EDITAR'
-                    className='Button-Edit'
-                    />
-                    </Link>
                 </div>
             </div>
         </div>

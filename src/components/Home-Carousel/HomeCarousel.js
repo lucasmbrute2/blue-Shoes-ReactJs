@@ -2,6 +2,9 @@ import { Carousel } from 'react-bootstrap'
 import React from 'react'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './HomeCarousel.css'
+import img1 from '../assets/first-img.webp'
+import img2 from '../assets/second-img.jpg'
+import img3 from '../assets/third-img.jpg'
 
 export default function HomeCarousel() {
     return (
@@ -10,21 +13,21 @@ export default function HomeCarousel() {
         <Carousel.Item>
             <img
             className="d-block w-100"
-            src="https://wallpaperaccess.com/full/281104.jpg"
+            src={img1}
             alt="First slide"
             />         
         </Carousel.Item>
         <Carousel.Item>
             <img
             className="d-block w-100"
-            src="https://coolwallpapers.me/picsup/3101295-athlete_jordans_jumpman_kicks_nike_shoes_sidewalk_sneakers_socks_sports_street.jpg"
+            src={img2}
             alt="Second slide"
             />
         </Carousel.Item>
         <Carousel.Item>
             <img
             className="d-block w-100"
-            src="https://wallpaperforu.com/wp-content/uploads/2020/08/sneaker-wallpaper-20082217135426-scaled.jpg"
+            src={img3}
             alt="Third slide"
             />
         </Carousel.Item>
