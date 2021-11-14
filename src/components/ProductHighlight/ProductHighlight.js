@@ -1,9 +1,9 @@
-import "./ProductList.css"; 
+import "./ProductHighlight.css"; 
 import React, { useEffect, useState } from 'react';
 import AirForce from "../assets/airForce1.png"
 import Swoosh from "../assets/swoosh.png"
 
-export const ProductList = () => {
+export const ProductHighlight = () => {
 
     const products = [{
         id: 1,
@@ -63,3 +63,5 @@ export const ProductList = () => {
         </div>
     )
 }
+
+export default ProductHighlight

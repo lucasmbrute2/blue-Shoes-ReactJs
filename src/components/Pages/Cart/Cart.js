@@ -64,7 +64,7 @@ export default function Cart() {
                             <button className='button-remove'>Remover</button>
                         </div>
                         <p className='price-number'>99,90</p>
-                        <p className='price-number'>{valor.toFixed(2)}</p>                   
+                        <p className='price-number'>{valor ?valor.toFixed(2): 99.90.toFixed(2)}</p>                   
                     </div>
                 </div>
             </div>
