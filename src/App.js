@@ -21,7 +21,7 @@ function App() {
           <Route path="/my-account" component={MyAccount} />
           <Route path='/login' component={Login}/>
           <Route path='/register' component={Register}/>
-          <Route path='/view' component={ViewProduct}/>
+          <Route path='/view/:id' component={ViewProduct}/>
           <Route path='/cart' component={Cart}/>
           <Route path='/products' component={Products}/>
         </Switch>
