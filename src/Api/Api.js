@@ -1,4 +1,5 @@
 export const Api = {
+        
     baseUrl: "https://dev-blueshoes.herokuapp.com/",
 
     authHeader: ()=>({
@@ -24,7 +25,7 @@ export const Api = {
         body: JSON.stringify(body)
     }),
     
-    update: (path,body,id,auth)=>{
+    update: (path,id,body,auth)=>{
         return fetch(Api.baseUrl+path+'/'+id,{
             method: "PUT",
             headers: new Headers({
@@ -34,7 +35,17 @@ export const Api = {
             body: JSON.stringify(body)
         })
     },
-
+    patchCart: (path,id,body,auth)=>{
+        return fetch(Api.baseUrl+path+'/'+id,{
+            method: 'PATCH',
+            headers: new Headers({
+                "Content-type": "application/json",
+                ...(auth? Api.authHeader():{})
+            }),
+            body: JSON.stringify(body)
+        })
+        
+    },
     delete: (path,id,auth)=>{
         return fetch (Api.baseUrl+path+id,{
             method: "DELETE",
