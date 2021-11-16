@@ -17,7 +17,7 @@ export default function ProductCardView({ product }) {
                     </div>
                     
                     <div className="card__price">
-                        <p className="card__price__price">{product.preco}</p>
+                        <p className="card__price__price">{product.preco.toFixed(2)}</p>
                     </div>
 
                     <div className="card__color">
