@@ -23,7 +23,7 @@ export default function ProductCard({ card }) {
         }
         
         
-        const response = await Api.patchCart('produto/adicionar',productId,payload,true)
+        const response = await Api.post('item/criar',payload,productId,1,true)
         const body = await response.json()
         if(response.status ===200){
             alert('Sucesso!')
