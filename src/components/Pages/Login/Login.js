@@ -28,13 +28,13 @@ export default function Login(props) {
         const response = await Api.post("auth/login",payload)
         const body = await response.json()
         if (response.status===201){
-            setJwt(body.token)
+            localStorage.setItem('JWT',body.token)
             setUser(body.usuario)
             setHeader(true)
             props.history.push('/')
         
         }else{
-            throw new Error()
+            alert('Usuário ou senha incorreta.')
         }
     }
     
