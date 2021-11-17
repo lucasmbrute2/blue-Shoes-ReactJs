@@ -7,12 +7,9 @@ const Context = createContext()
 function CtxApp({ children }){
     const [jwt,setJwt, jwtRemove] = useLocalStorage('JWT','')
     const [user,setUser, userRemove] = useLocalStorage('user','')    
-    const [header,setHeader] = useState(false)
-    
-
     
     return(
-        <Context.Provider value={{ header, setHeader, user, setUser, jwt, setJwt, jwtRemove, userRemove }}>
+        <Context.Provider value={{ user, setUser, jwt, setJwt, jwtRemove, userRemove }}>
             {children}
         </Context.Provider>
     )

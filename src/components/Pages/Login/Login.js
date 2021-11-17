@@ -11,7 +11,7 @@ export default function Login(props) {
 
     // =====CONTEXT====
 
-    const { setHeader , setUser, setJwt} = useContext(Context)
+    const { setJwt, setUser} = useContext(Context)
 
     // ======FUNÇÃO DE SUBMIT========
     const HandleSubmit = async (e)=>{
@@ -28,9 +28,8 @@ export default function Login(props) {
         const response = await Api.post("auth/login",payload)
         const body = await response.json()
         if (response.status===201){
-            localStorage.setItem('JWT',body.token)
+            setJwt(body.token)
             setUser(body.usuario)
-            setHeader(true)
             props.history.push('/')
         
         }else{
