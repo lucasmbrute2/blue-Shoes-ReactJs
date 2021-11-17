@@ -13,7 +13,6 @@ export default function Cart() {
         const getProduct = async ()=>{
             const response = await Api.getAll('produto/todos',true)
             const body = await response.json()
-            console.log('construiu de novo')
             setProduct(body)
         }
         getProduct()

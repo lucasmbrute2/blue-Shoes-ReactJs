@@ -1,9 +1,13 @@
+import { useContext } from "react"
 import { Link } from "react-router-dom"
 import { Api } from "../../../Api/Api"
+import { Context } from "../../../context/CtxApp"
 import SubmitButton from "../../Buttons/SubmitButton/SubmitButton"
 import "./Register.css"
 
 export default function Register(props){
+   
+    const { setHeader, setUser, setJwt} = useContext(Context)
     
     const HandleSubmit = async (e)=>{
         e.preventDefault()
@@ -33,13 +37,12 @@ export default function Register(props){
             
             const response = await Api.post('auth/login',payloadLogin,true)
             const body = await response.json()
-
-            localStorage.setItem('JWT',body.token)
-            localStorage.setItem('user',JSON.stringify(body.usuario))
+            setJwt(body.token)
+            setUser(body.usuario)
+            setHeader(true)
             props.history.push('/')
             
         }else{
-            console.log(response)
             alert(response.error)
         }
     }

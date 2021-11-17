@@ -8,7 +8,7 @@ export default function Header(){
     
     const { header, user } = useContext(Context)
     const [cartArray,setCartArray] = useState([])
-
+    
     return(
         <div className='header header-height'>
             <div className='header-container container'>
