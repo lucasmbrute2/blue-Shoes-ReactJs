@@ -18,14 +18,14 @@ export default function Footer(){
                 </div>    
             
                 <div className='footer-container-div fourth'>
-                    <p className='footer-container-div-bottom'>Ajuda</p>
+                    <p className='footer-container-div-bottom bold'>Ajuda</p>
                     <p className='footer-container-div-bottom'>Ajuda e suporte</p>
                     <p className='footer-container-div-bottom'>Perguntas frequentes</p>
                     <p className='footer-container-div-bottom'>Fale conosco</p>
                 </div>
                 
                 <div className='footer-container-div fifth'>
-                    <span><p className='footer-container-div-bottom'>Institucional</p></span>
+                    <span><p className='footer-container-div-bottom bold'>Institucional</p></span>
                     <p className='footer-container-div-bottom'>Sobre nós</p>
                     <p className='footer-container-div-bottom'>Política de privacidade</p>
                 </div>
