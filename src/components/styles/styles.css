@@ -3,3 +3,6 @@
     margin: 0 auto;
 }
 
+.header-height{
+    --header-height: 77px;
+}

@@ -1,6 +1,4 @@
 .footer{
-    position: absolute;
-    bottom: 1px;
     background-color: #e6e6e6;
     width: 100%;
 }
@@ -38,16 +36,18 @@
 
 .first{
     grid-area: first;
-    
+    border-bottom: 1px solid #000; 
 }
 
 .second{
     grid-area: second;
+    border-bottom: 1px solid #000;   
 }
 
 .third{
 
     grid-area: third;
+    border-bottom: 1px solid #000; 
 }
 
 .fourth{

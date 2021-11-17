@@ -1,0 +1,59 @@
+.content{
+    margin-bottom: 5rem;
+}
+.content-div{
+    margin: 30px auto;
+}
+
+.content-div-h2{
+
+    font-family: 'Poppins',sans-serif;
+    font-weight: 600;
+}
+.cardImg{
+
+    align-items: center;
+    text-align: center;
+
+}
+
+.cardImg-img{
+    width: 200px;
+    display: block;
+    margin: 0 auto;
+}
+
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card-logo{
+    width: 50px;
+    margin: 0 10px;
+}
+
+.card-container-div{
+    padding-bottom: 1rem;
+    background-color: #000;
+
+}
+
+.card-container-h2{
+    text-align: center;
+    color: #fff;
+    font-family: 'Poppins',sans-serif;
+}
+
+.button{
+    padding: 0.5rem;
+}
+
+.CardInfo{
+    padding: 1rem;
+}
+
+.cardInfo-p{
+    padding: 1rem;
+}

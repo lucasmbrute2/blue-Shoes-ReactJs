@@ -1,0 +1,99 @@
+.Cart{
+    height: calc(100vh - var(--header-height));
+    width: calc(100% - 150px);
+    margin: 0 auto;
+    display: flex;
+}
+.Cart-Container{   
+    height: 70%;
+    margin: 50px auto;
+    padding: 1rem;
+}
+
+.Cart-Container-h1{
+    font-size: 2em;
+    font-family: 'Roboto',sans-serif;
+
+}
+
+.cardProduct-div{
+    margin-top: 40px;
+    
+}
+
+.cardProduct-div-details{
+    display: grid;
+    grid-template-columns: 2fr repeat(3, 1fr);
+    grid-template-rows: 1fr 2fr ;
+    row-gap: 40px;
+    border-bottom: 1px solid #ccc;
+}
+
+
+/* ======ITENS DENTRO DO CONTAINER DO CARRINHO=========== */
+.CardProduct-div-details-p{
+
+    padding: 20px 0;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-family: 'Roboto',sans-serif;
+    font-size: 1.2em;
+}
+.firstCard{
+
+    padding-left: 3rem;
+}
+.container-buttons{
+    margin: auto 0;
+}
+
+.input-quantity{
+    
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 40px;
+    width: 70px;
+    padding-left: 10px;
+    text-align: center;
+    outline: none;
+
+}
+
+.button-remove{
+    display: block;
+    margin-top: 40px;
+    border: none;
+    color: rgba(255, 0, 0, 0.712);
+    background: none;
+    font-weight: 600;
+    font-family: 'Poppins',sans-serif;
+}
+
+.CardProduct-div-details-div{
+    display:flex;
+    align-items: center;
+}
+
+.img-CardProduct{
+    max-width: 250px;
+    height: 100px;
+    padding-left: 2rem;
+}
+
+.items-description{
+    width: 300px;
+    margin-left: 130px;
+}
+
+.items-description-h3{
+    margin-bottom: 30px;
+}
+.items-description-span{
+
+    color: rgba(0, 0, 0, 0.856);
+}
+.price-number{
+    
+    margin: 40px 0;
+}
