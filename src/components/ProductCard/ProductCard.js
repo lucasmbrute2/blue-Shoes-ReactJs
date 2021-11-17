@@ -8,24 +8,24 @@ export default function ProductCard({ card }) {
 
     // ACESSANDO O ID DO CARRINHO DO USUÁRIO
     const { user } = useContext(Context)    
-    const { id } = user.carrinho
+    const id = user? user.carrinho: null
     
     // const keyRef = useRef(null)
     
-
-    const HandleSubmitCart = async(e)=>{
+      const HandleSubmitCart = async(e,produtoId)=>{
         
         e.preventDefault()
-       const productId = e.target.productId.value
-        
+
         const payload = {
-            carrinhoId: id
+            carrinhoId: Number(id),
+            produtoId,
+            quantidade: 1
         }
         
         
-        const response = await Api.post('item/criar',payload,productId,1,true)
+        const response = await Api.post('item/criar',payload,true)
         const body = await response.json()
-        if(response.status ===200){
+        if(response.status ===201){
             alert('Sucesso!')
         }
     }
@@ -33,9 +33,8 @@ export default function ProductCard({ card }) {
     return (
         <div className='productCard'>
             {card.map(eachCard=>(
-                <form onSubmit={HandleSubmitCart} className='productCard-form'>
+                <form onSubmit={(e)=>HandleSubmitCart(e,eachCard.id)} className='productCard-form'>
                     <div className='productCard-div' key={eachCard.id} /*ref={keyRef}*/>
-                        <input value={eachCard.id} style={{ display: 'none' }} name='productId'></input>
                         <Link to={`/view/${eachCard.id}`} className='productCard-link'>
                             <img src={eachCard.imagem} className='productCard-img'/>
                         </Link>
