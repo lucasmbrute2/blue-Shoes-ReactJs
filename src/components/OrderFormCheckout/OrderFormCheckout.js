@@ -3,7 +3,7 @@ import './OrderFormCheckout.css'
 
 export default function OrderFormCheckout() {
     return (
-        <div className='orderForm'>
+        <div className='orderFormCheckout'>
             <div className='container'>
                 <div className='orderForm-div-h2'>
                     <h2>
