@@ -3,11 +3,11 @@ import blueShoes from "../assets/blueShoes.png"
 import { Link } from "react-router-dom"
 import { useContext, useEffect, useState } from "react"
 import { Context } from "../../context/CtxApp"
+import HeaderCartIcon from "../HeaderCartIcon/HeaderCartIcon"
 
 export default function Header(){
     
-    const { user } = useContext(Context)
-    const [cartArray,setCartArray] = useState([])
+    const { user } = useContext(Context) 
     
     return(
         <div className='header header-height'>
@@ -39,10 +39,7 @@ export default function Header(){
                             </li>
                             <li className='header-li li-cart'>
                                 <Link to='/cart'>
-                                    <i class="fas fa-shopping-cart"></i>  
-                                    <span className='header-li-cartArray'>
-                                        {cartArray.length}
-                                    </span>
+                                    <HeaderCartIcon/>
                                 </Link>
                             </li>
                         </ul>

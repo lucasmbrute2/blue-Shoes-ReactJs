@@ -3,7 +3,7 @@
     flex-wrap: wrap;
     width: 85vw;
     justify-content:space-around;
-    margin-bottom: 100px;
+    margin: 50px 0 100px 0;  
 }
 
 .filter-products-container-div{

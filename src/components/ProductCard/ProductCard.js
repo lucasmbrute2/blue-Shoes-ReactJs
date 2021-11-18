@@ -7,13 +7,11 @@ import { Api } from "../../Api/Api"
 export default function ProductCard({ card }) {
 
     // ACESSANDO O ID DO CARRINHO DO USUÁRIO
-    const { user } = useContext(Context)    
-    const id = user? user.carrinho: null
+    const { user, cart ,setCart , toggle, setToggle, setCartLocal } = useContext(Context)    
+    const id = user? user.carrinho.id : null
     
-    // const keyRef = useRef(null)
+    const HandleSubmitCart = async(e,produtoId)=>{
     
-      const HandleSubmitCart = async(e,produtoId)=>{
-        
         e.preventDefault()
 
         const payload = {
@@ -21,12 +19,15 @@ export default function ProductCard({ card }) {
             produtoId,
             quantidade: 1
         }
-        
-        
-        const response = await Api.post('item/criar',payload,true)
-        const body = await response.json()
-        if(response.status ===201){
-            alert('Sucesso!')
+              
+        console.log(cart)
+             
+        if(user){
+            const response = await Api.post('item/criar',payload,true)
+            const body = await response.json()
+            if(response.status ===201){
+                        
+            }
         }
     }
 
@@ -41,7 +42,7 @@ export default function ProductCard({ card }) {
                         <p className='productCard-p'>{eachCard.nome}</p>
                         <div className='productCard-div-button'>
                             <p className='productCard-div-button-price'>{eachCard.preco.toFixed(2)}</p>                           
-                            <button type='submit' className='productCard-button'>
+                            <button type='submit' className='productCard-button' /*onClick={getApi}*/ onClick={()=>setToggle(!toggle)}>
                                 <p>Add to cart</p>                   
                             </button>               
                         </div>
