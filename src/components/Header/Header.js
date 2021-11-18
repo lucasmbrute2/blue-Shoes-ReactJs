@@ -6,7 +6,7 @@ import { Context } from "../../context/CtxApp"
 
 export default function Header(){
     
-    const { header, user } = useContext(Context)
+    const { user } = useContext(Context)
     const [cartArray,setCartArray] = useState([])
     
     return(
@@ -29,7 +29,7 @@ export default function Header(){
                                 </Link>
                             </li>
                             <li className='header-li'>
-                                {header? 
+                                {user? 
                                 <Link to='/my-account' className='header-li-link'>
                                    <span className='header-li-span'>Olá,</span>{user.nome}
                                 </Link> 
