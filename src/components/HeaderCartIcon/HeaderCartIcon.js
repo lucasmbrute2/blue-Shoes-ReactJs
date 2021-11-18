@@ -5,8 +5,8 @@ import { Context } from '../../context/CtxApp'
 export default function HeaderCartIcon() {
     
     const { user, cart ,setCart, toggle, cartLocal, setCartLocal } = useContext(Context)
-    const  { id }  = user? user.carrinho : null
-    console.log(id)
+    const  id = user? user.carrinho.id : null
+
     useEffect(()=>{
         const getCartId = async ()=>{
         const response = await Api.getById('carrinho',id,true)

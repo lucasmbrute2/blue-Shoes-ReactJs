@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import AccountDataInfos from '../../Account-Data-Infos/AccountDataInfos'
 import Titles from '../../Titles/Titles'
 import { Api } from '../../../Api/Api';
 import './MyAccount.css'
+import { Context } from '../../../context/CtxApp';
 
 export default function MyAccount(props) {
     
-    const userData = localStorage.getItem("user")
-    const { id } = JSON.parse(userData)
+    const { user } = useContext(Context)
+    const  { id }  = user? user.carrinho : null
     
-    const [user, setUser] = useState([]);
+    const [userAccount, setUser] = useState([]);
     useEffect(() => {
         const loadUser = async () => {
             const response = await Api.getById("usuario",id,true)
@@ -29,15 +30,15 @@ export default function MyAccount(props) {
                 <div className='MyAccount-Text'>
                     <AccountDataInfos
                     Info='Nome:'
-                    dbInfo={user.nome}
+                    dbInfo={userAccount.nome}
                     />
                     <AccountDataInfos
                     Info='Email:'
-                    dbInfo={user.email}
+                    dbInfo={userAccount.email}
                     />
                     <AccountDataInfos
                     Info='CPF:'
-                    dbInfo={user.cpf}
+                    dbInfo={userAccount.cpf}
                     />
                 </div>
             </div>

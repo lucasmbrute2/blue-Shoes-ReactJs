@@ -39,7 +39,6 @@ export default function Register(props){
             const body = await response.json()
             setJwt(body.token)
             setUser(body.usuario)
-            setHeader(true)
             props.history.push('/')
             
         }else{
