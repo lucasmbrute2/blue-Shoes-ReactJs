@@ -10,6 +10,7 @@ import Cart from "./components/Pages/Cart/Cart";
 import Header from "./components/Header/Header";
 import Products from "./components/Pages/Products/Products";
 import { CtxApp } from "./context/CtxApp";
+import Checkout from "./components/Pages/Checkout/Checkout";
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
           <Route path='/view/:id' component={ViewProduct}/>
           <Route path='/cart' component={Cart}/>
           <Route path='/products' component={Products}/>
+          <Route path='/checkout' component={Checkout}/>
         </Switch>
       </Router>
     </CtxApp>
