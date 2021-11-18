@@ -3,6 +3,7 @@
     width: calc(100% - 150px);
     margin: 0 auto;
     display: flex;
+    padding-top: var(--header-height);
 }
 .Cart-Container{   
     height: 70%;

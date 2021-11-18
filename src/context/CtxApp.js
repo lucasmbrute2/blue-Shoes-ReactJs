@@ -7,9 +7,13 @@ const Context = createContext()
 function CtxApp({ children }){
     const [jwt,setJwt, jwtRemove] = useLocalStorage('JWT','')
     const [user,setUser, userRemove] = useLocalStorage('user','')    
+    const [cartLocal, setCartLocal] = useLocalStorage('cart',null)
+    const [cart,setCart] = useState(undefined)
     
+    const [toggle,setToggle] =useState(true)
+     
     return(
-        <Context.Provider value={{ user, setUser, jwt, setJwt, jwtRemove, userRemove }}>
+        <Context.Provider value={{ toggle, setToggle, user, setUser, jwt, setJwt, jwtRemove, userRemove, cart ,cart, setCart, cartLocal ,setCartLocal }}>
             {children}
         </Context.Provider>
     )
