@@ -1,7 +1,7 @@
 import "./Header.css" 
 import blueShoes from "../assets/blueShoes.png"
 import { Link } from "react-router-dom"
-import { useContext, useEffect, useState } from "react"
+import { useContext } from "react"
 import { Context } from "../../context/CtxApp"
 import HeaderCartIcon from "../HeaderCartIcon/HeaderCartIcon"
 

@@ -5,15 +5,14 @@ import { useLocalStorage } from "react-use"
 const Context = createContext()
 
 function CtxApp({ children }){
-    const [jwt,setJwt, jwtRemove] = useLocalStorage('JWT','')
-    const [user,setUser, userRemove] = useLocalStorage('user','')    
-    const [cartLocal, setCartLocal] = useLocalStorage('cart',null)
-    const [cart,setCart] = useState(undefined)
     
-    const [toggle,setToggle] =useState(true)
+    const [jwt,setJwt, jwtRemove] = useLocalStorage('JWT',null)
+    const [user,setUser, userRemove] = useLocalStorage('user', undefined)    
+    const [cartLocal, setCartLocal] = useLocalStorage('cart',{produtos:[]})
+    const [cart,setCart] = useState(undefined)   
      
     return(
-        <Context.Provider value={{ toggle, setToggle, user, setUser, jwt, setJwt, jwtRemove, userRemove, cart ,cart, setCart, cartLocal ,setCartLocal }}>
+        <Context.Provider value={{ user, setUser, jwt, setJwt, jwtRemove, userRemove, cart, setCart, cartLocal ,setCartLocal }}>
             {children}
         </Context.Provider>
     )
