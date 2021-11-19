@@ -13,7 +13,7 @@ function CtxApp({ children }){
     const [toggle,setToggle] =useState(true)
      
     return(
-        <Context.Provider value={{ toggle, setToggle, user, setUser, jwt, setJwt, jwtRemove, userRemove, cart ,cart, setCart, cartLocal ,setCartLocal }}>
+        <Context.Provider value={{ toggle, setToggle, user, setUser, jwt, setJwt, jwtRemove, userRemove, cart, setCart, cartLocal ,setCartLocal }}>
             {children}
         </Context.Provider>
     )

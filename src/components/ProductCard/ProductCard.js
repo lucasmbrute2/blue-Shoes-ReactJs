@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom"
 import { Context } from "../../context/CtxApp"
 import { Api } from "../../Api/Api"
+import * as lod from 'lodash';
 
 export default function ProductCard({ card }) {
 
@@ -11,13 +12,10 @@ export default function ProductCard({ card }) {
     const id = user? user.carrinho.id : null
     
     console.log(`ID do carrinho ${id}`)
-    
+    console.log(cartLocal)
     const HandleSubmitCart = async(e,produtoId)=>{
     
-        e.preventDefault()
-
-        
-        
+        e.preventDefault()  
         
         const payload = {
             carrinhoId: Number(id),
@@ -25,14 +23,9 @@ export default function ProductCard({ card }) {
             quantidade: 1
         }
         
-        const payloadLocal =[{
-            user,
-            produtoId
-        }]
-        const arr=[]
         
-        
-        setCartLocal({user,produtos:[...produtoId]})
+        const arr = new Array(...cartLocal.produtos, produtoId)
+        setCartLocal({user, produtos: arr})
         
         if(user){
             const response = await Api.post('item/criar',payload,true)
