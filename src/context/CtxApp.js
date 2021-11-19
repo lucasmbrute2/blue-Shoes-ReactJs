@@ -10,9 +10,10 @@ function CtxApp({ children }){
     const [user,setUser, userRemove] = useLocalStorage('user', undefined)    
     const [cartLocal, setCartLocal] = useLocalStorage('cart',{produtos:[]})
     const [cart,setCart] = useState(undefined)   
+    const [product, setProduct] = useState([])
      
     return(
-        <Context.Provider value={{ user, setUser, jwt, setJwt, jwtRemove, userRemove, cart, setCart, cartLocal ,setCartLocal }}>
+        <Context.Provider value={{ user, setUser, jwt, setJwt, jwtRemove, userRemove, cart, setCart, cartLocal ,setCartLocal, product, setProduct}}>
             {children}
         </Context.Provider>
     )
