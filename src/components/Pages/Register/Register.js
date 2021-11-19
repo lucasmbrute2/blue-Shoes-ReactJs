@@ -31,7 +31,7 @@ export default function Register(props){
             var url = 'usuario/adm'
              
         }else{
-            var url = 'usuario/criar'
+            var url = 'usuario'
             
         }
         
