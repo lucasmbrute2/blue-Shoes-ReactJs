@@ -30,7 +30,7 @@ export default function Header(){
                             </li>
                             <li className='header-li'>
                                 {user? 
-                                <Link to='/my-account' className='header-li-link'>
+                                <Link to='/' className='header-li-link'>
                                    <span className='header-li-span'>Olá,</span>{user.nome}
                                 </Link> 
                                 :<Link to='/login' className='header-li-link-signIn'>
