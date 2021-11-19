@@ -8,7 +8,7 @@ import { Context } from '../../../context/CtxApp';
 export default function MyAccount(props) {
     
     const { user } = useContext(Context)
-    const  { id }  = user? user.carrinho : null
+    const  id = user? user.carrinho.id : null
     
     const [userAccount, setUser] = useState([]);
     useEffect(() => {

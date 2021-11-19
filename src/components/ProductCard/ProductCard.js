@@ -3,16 +3,15 @@ import React, { useContext, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom"
 import { Context } from "../../context/CtxApp"
 import { Api } from "../../Api/Api"
-import * as lod from 'lodash';
 
 export default function ProductCard({ card }) {
 
     // ACESSANDO O ID DO CARRINHO DO USUÁRIO
-    const { user, toggle, setToggle, cartLocal, setCartLocal } = useContext(Context)    
+    const { user, cartLocal, setCartLocal } = useContext(Context)    
     const id = user? user.carrinho.id : null
     
     console.log(`ID do carrinho ${id}`)
-    console.log(cartLocal)
+ 
     const HandleSubmitCart = async(e,produtoId)=>{
     
         e.preventDefault()  
@@ -23,21 +22,17 @@ export default function ProductCard({ card }) {
             quantidade: 1
         }
         
-        
         const arr = new Array(...cartLocal.produtos, produtoId)
-        setCartLocal({user, produtos: arr})
-        
+        setCartLocal({produtos: arr})
+
         if(user){
             const response = await Api.post('item/criar',payload,true)
             const body = await response.json()
             if(response.status ===201){
-                
-                
+                              
             }
         }
-
     }
-
     return (
         <div className='productCard'>
             {card.map(eachCard=>(
@@ -49,7 +44,7 @@ export default function ProductCard({ card }) {
                         <p className='productCard-p'>{eachCard.nome}</p>
                         <div className='productCard-div-button'>
                             <p className='productCard-div-button-price'>{eachCard.preco.toFixed(2)}</p>                           
-                            <button type='submit' className='productCard-button' /*onClick={getApi}*/ onClick={()=>setToggle(!toggle)}>
+                            <button type='submit' className='productCard-button'>
                                 <p>Add to cart</p>                   
                             </button>               
                         </div>
