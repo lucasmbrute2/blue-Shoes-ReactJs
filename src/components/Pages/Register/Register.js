@@ -26,8 +26,18 @@ export default function Register(props){
             cpf
         }
         
-        const response = await Api.post('usuario/criar',payload)
-    
+        if(props.history.location.pathname ==='/register/admin'){
+          
+            var url = 'usuario/adm'
+             
+        }else{
+            var url = 'usuario/criar'
+            
+        }
+        
+        const response = await Api.post(url,payload,true)
+        const body = await response.json()
+        console.log(body)
         if(response.status ===201){
             
             const payloadLogin = {
@@ -44,6 +54,7 @@ export default function Register(props){
         }else{
             alert(response.error)
         }
+           
     }
     
     return(
