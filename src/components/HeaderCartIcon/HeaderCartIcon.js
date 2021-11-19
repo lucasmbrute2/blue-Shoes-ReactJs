@@ -12,7 +12,6 @@ export default function HeaderCartIcon() {
         const response = await Api.getById('carrinho',id,true)
         const body = await response.json()
         setCart(body)
-        console.log(body)
     }
     getCartId()
     },[toggle])
@@ -20,6 +19,7 @@ export default function HeaderCartIcon() {
     if(cart===undefined){
         return <div>Loading...</div>
     }
+
     return (
         <div>          
             <i class="fas fa-shopping-cart"></i>  

@@ -7,28 +7,42 @@ import { Api } from "../../Api/Api"
 export default function ProductCard({ card }) {
 
     // ACESSANDO O ID DO CARRINHO DO USUÁRIO
-    const { user, cart ,setCart , toggle, setToggle, setCartLocal } = useContext(Context)    
+    const { user, toggle, setToggle, cartLocal, setCartLocal } = useContext(Context)    
     const id = user? user.carrinho.id : null
+    
+    console.log(`ID do carrinho ${id}`)
     
     const HandleSubmitCart = async(e,produtoId)=>{
     
         e.preventDefault()
 
+        
+        
+        
         const payload = {
             carrinhoId: Number(id),
             produtoId,
             quantidade: 1
         }
-              
-        console.log(cart)
-             
+        
+        const payloadLocal =[{
+            user,
+            produtoId
+        }]
+        const arr=[]
+        
+        
+        setCartLocal({user,produtos:[...produtoId]})
+        
         if(user){
             const response = await Api.post('item/criar',payload,true)
             const body = await response.json()
             if(response.status ===201){
-                        
+                
+                
             }
         }
+
     }
 
     return (

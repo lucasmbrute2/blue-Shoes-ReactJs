@@ -7,9 +7,9 @@ const Context = createContext()
 function CtxApp({ children }){
     const [jwt,setJwt, jwtRemove] = useLocalStorage('JWT','')
     const [user,setUser, userRemove] = useLocalStorage('user','')    
-    const [cartLocal, setCartLocal] = useLocalStorage('cart',null)
-    const [cart,setCart] = useState(undefined)
+    const [cartLocal, setCartLocal] = useLocalStorage('cart',{user,produtos:[]})
     
+    const [cart,setCart] = useState(undefined)   
     const [toggle,setToggle] =useState(true)
      
     return(
