@@ -3,22 +3,21 @@
     flex-wrap: wrap;
     width: 85vw;
     justify-content:space-around;
-    margin: 50px 0 100px 0;  
+    margin: 0px 0 100px 0;  
 }
 
 .filter-products-container-div{
     background-color:rgb(245, 245, 245);
-    height:350px;
+    height:375px;
     width:350px;
     margin: 10px 5px;
     cursor: pointer;
     border-radius:5px;
-    
 }
 
 .filter-products-titles{
     display:flex;
-    padding:15px 0px 0 25px;
+    padding:100px 0px 0 25px;
     font-size: 20px;
     align-items: center;
 }
@@ -28,10 +27,19 @@
     height:40px;
     margin-left: 10px;
 }
+
+.filter-products-container-h1{
+    color: rgb(10, 10, 10);
+    text-align: center;
+    font-family: 'Poppins',sans-serif;
+    font-size: 23px;
+}
+
 .filter-products-container-h2{
     color: rgb(10, 10, 10);
     text-align: center;
     font-family: 'Poppins',sans-serif;
+    font-size: 21px;
 }
 
 .card-container-h2{
@@ -42,5 +50,5 @@
 
 .filter-products-logo{
     width: 75px;
-    margin:15px
+    margin-left: 10px;
 }
