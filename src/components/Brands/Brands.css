@@ -14,11 +14,11 @@
   width: 85px;
   padding: 25px 0;
   cursor: pointer;
-  transition: all 0.7s;
+  transition: all 0.3s;
 }
 
 .card-logo:hover{
-  width:100px;
+  transform: scale(1.2);
 }
 
 .logo-img{
