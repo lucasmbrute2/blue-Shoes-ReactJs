@@ -22,8 +22,7 @@ export default function ProductCard({ card }) {
             quantidade: 1
         }
         
-        const arr = new Array(...cartLocal.produtos, produtoId)
-        setCartLocal({produtos: arr})
+        setCartLocal([...cartLocal,produtoId])
 
         if(user){
             const response = await Api.post('item/criar',payload,true)

@@ -18,7 +18,7 @@ export default function HeaderCartIcon() {
     getCartId()
     },[])
     
-    const cartNumber = cartLocal.produtos.length
+    const cartNumber = cartLocal.length
 
     if(!cart){
         return <div>Loading...</div>
