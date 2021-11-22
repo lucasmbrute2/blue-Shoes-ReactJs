@@ -37,7 +37,7 @@ export default function Header(props){
                     <form onSubmit={goLogin}>                        
                         <input type='text' placeholder='Procurar' className='header-searchBar' name='searchProduct'></input>
                         <i class="fas fa-search"></i>
-                        <input type='submit' style={{ opacity: 'transparente' }}></input>
+                        <input type='submit' style={{ width: 0, height: "0", border: "none" }}></input>
                     </form>
                 </div>
             
