@@ -43,7 +43,7 @@ export default function OrderForm({ cartLocal, price }) {
                     <div className='orderForm-div-p'>
                         <div className='container-p'>
                             <p>
-                                Itens {cartLocal.produtos.length}
+                                Itens {cartLocal.length}
                             </p>
                             <p>
                                 {price}

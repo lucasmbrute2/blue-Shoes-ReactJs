@@ -14,7 +14,7 @@ export default function Cart() {
     console.log(productUnique)
     
     useEffect(()=>{
-        cartLocal.produtos.forEach(element=>{
+        cartLocal.forEach(element=>{
             const getProduct = async ()=>{
                 const response = await Api.getAll(`produto/${element}`,true)
                 const body = await response.json()
@@ -62,7 +62,7 @@ export default function Cart() {
                                 <p className='CardProduct-div-details-p'>Total</p>
                                 {productUnique.map(eachProduct=>(
                                 <div className='CardProduct-div-details-div' key={eachProduct.id}>
-                                    <img className='img-CardProduct' src="https://images.tcdn.com.br/img/img_prod/938519/180_tenis_nike_air_force_1_low_reflective_swoosh_2021_1_8a5c09e4c39fad02f606d8a53323487e_20210812081513.png"/>
+                                    <img className='img-CardProduct' src={eachProduct.imagem}/>
                                     <div className='items-description'>
                                         <h3 className='items-description-h3'>{eachProduct.nome}</h3>
                                         <p><span className='items-description-span'>Cor:</span> Azul</p>
