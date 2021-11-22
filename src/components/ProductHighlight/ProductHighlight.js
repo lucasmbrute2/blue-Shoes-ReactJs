@@ -44,12 +44,7 @@ export const ProductHighlight = () => {
 
       loadProductList();
     }, []);
-
-    function teste (destaques){
-        return destaques.id > 7 
-    }
-
-    console.log(product.find(teste)) */
+*/
 
     return(
         <div className="content container">           
@@ -60,7 +55,7 @@ export const ProductHighlight = () => {
                 {products.map(product=>(
                     <div className='card-container-div' key={product.id}>
                         <div className='card-container-logo'>
-                            <img src={product.logo} className='card-logo'></img>
+                            <img src={product.logo} className='card-logo-destaque'></img>
                         </div>
                         <div className="cardImg">                    
                             <img src={product.image} className='cardImg-img'/>
