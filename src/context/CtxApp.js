@@ -8,12 +8,14 @@ function CtxApp({ children }){
     
     const [jwt,setJwt, jwtRemove] = useLocalStorage('JWT',null)
     const [user,setUser, userRemove] = useLocalStorage('user', undefined)    
-    const [cartLocal, setCartLocal] = useLocalStorage('cart',{produtos:[]})
+    const [cartLocal, setCartLocal] = useLocalStorage('cart',[])
+    const [order, setOrder] = useLocalStorage('order',null)
+    const [verificationLogin, setVerificationLogin] = useState(false)
     const [cart,setCart] = useState(undefined)   
     const [product, setProduct] = useState([])
      
     return(
-        <Context.Provider value={{ user, setUser, jwt, setJwt, jwtRemove, userRemove, cart, setCart, cartLocal ,setCartLocal, product, setProduct}}>
+        <Context.Provider value={{ user, setUser, jwt, setJwt, jwtRemove, userRemove, cart, setCart, cartLocal ,setCartLocal, product, setProduct, order, setOrder, verificationLogin, setVerificationLogin }}>
             {children}
         </Context.Provider>
     )
