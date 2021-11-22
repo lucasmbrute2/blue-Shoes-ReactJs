@@ -1,13 +1,31 @@
 import "./Header.css" 
 import blueShoes from "../assets/blueShoes.png"
-import { Link } from "react-router-dom"
-import { useContext, useEffect, useState } from "react"
+import { Link, Redirect, useHistory } from "react-router-dom"
+import { useContext } from "react"
 import { Context } from "../../context/CtxApp"
 import HeaderCartIcon from "../HeaderCartIcon/HeaderCartIcon"
+import { Api } from "../../Api/Api"
 
-export default function Header(){
+
+
+export default function Header(props){
+
+    const history = useHistory()
+    const { user, setProduct } = useContext(Context) 
     
-    const { user } = useContext(Context) 
+    
+   
+    const goLogin = async (e)=> {
+        e.preventDefault()
+        
+        const searchProduct = e.target.searchProduct.value
+        
+        const response = await Api.getAll(`produto?nome=${searchProduct}`)
+        const body = await response.json()
+        setProduct(body)
+        history.push('/products')
+ 
+    }
     
     return(
         <div className='header header-height'>
@@ -16,8 +34,11 @@ export default function Header(){
                     <img src={blueShoes}className='header-logo'/>   
                 </Link>
                 <div className='header-div-input'>
-                    <input type='text' placeholder='Procurar' className='header-searchBar'></input>
-                    <i class="fas fa-search"></i>
+                    <form onSubmit={goLogin}>                        
+                        <input type='text' placeholder='Procurar' className='header-searchBar' name='searchProduct'></input>
+                        <i class="fas fa-search"></i>
+                        <input type='submit' style={{ width: 0, height: "0", border: "none" }}></input>
+                    </form>
                 </div>
             
                 <div className='header-div-nav'>
