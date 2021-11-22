@@ -1,7 +1,7 @@
 .brands{
   background-color: #000;
   width: 100%;
-   
+  height: 150px;
 }
 
 .brands >div:nth-child(1){
@@ -10,6 +10,26 @@
   align-items: center;
 }
 
+.card-logo{
+  width: 85px;
+  padding: 25px 0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card-logo:hover{
+  transform: scale(1.2);
+}
+
 .logo-img{
   width: 300px;
+}
+
+.brands-title h1{
+  display: flex;
+  justify-content: center;
+  margin: 2.5rem 0;
+  font-family: 'Poppins', sans-serif;
+  letter-spacing: -.5px;
+  font-weight: 600;
 }

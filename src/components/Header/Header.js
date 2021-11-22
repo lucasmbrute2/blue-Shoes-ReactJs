@@ -37,7 +37,7 @@ export default function Header(props){
                     <form onSubmit={goLogin}>                        
                         <input type='text' placeholder='Procurar' className='header-searchBar' name='searchProduct'></input>
                         <i class="fas fa-search"></i>
-                        <input type='submit' style={{ opacity: 'transparente' }}></input>
+                        <input type='submit' style={{ width: 0, height: "0", border: "none" }}></input>
                     </form>
                 </div>
             
@@ -51,7 +51,7 @@ export default function Header(props){
                             </li>
                             <li className='header-li'>
                                 {user? 
-                                <Link to='/my-account' className='header-li-link'>
+                                <Link to='/' className='header-li-link'>
                                    <span className='header-li-span'>Olá,</span>{user.nome}
                                 </Link> 
                                 :<Link to='/login' className='header-li-link-signIn'>
