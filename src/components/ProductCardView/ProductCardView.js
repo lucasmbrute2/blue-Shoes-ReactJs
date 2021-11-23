@@ -1,7 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./ProductCardView.css"; 
+import SubmitButton from "../Buttons/SubmitButton/SubmitButton";
+import { Context } from "../../context/CtxApp";
+import { useHistory } from "react-router";
 
 export default function ProductCardView({ product }) {
+    
+    const history = useHistory()
+    const { setCartLocal } = useContext(Context)
+    
+    const HandleAddToCart = () =>{
+        
+        setCartLocal(product.id)
+        alert("Produto adicionado ao carrinho")  
+        history.push("/cart")
+    }
+    
     return (
         <div className="products">
             <div className="product">
@@ -24,20 +38,7 @@ export default function ProductCardView({ product }) {
                         <p className="card__color__color">  Escolha a cor desejada:</p>
                         <ul className="color_options">
                             <li>
-                                <button className="color_choice" type="button" ></button>
-
-                            </li>
-                            <li>
-                                <button className="color_choice" type="button" ></button>
-
-                            </li>
-                            <li>
-                                <button className="color_choice" type="button" ></button>
-
-                            </li>
-                            <li>
-                                <button className="color_choice" type="button" ></button>
-
+                                <button className={`color_choice `} type="button" ></button>
                             </li>
                         </ul>
                     </div>
@@ -45,24 +46,15 @@ export default function ProductCardView({ product }) {
                     <div className="card__size">
                         <p className='card-size-p'> Escolha o tamanho desejado:</p>
                             <ul className="size_options"> 
-                                <li>
-                                        <button className="size_choice" type="button">37</button>
-
-                                    </li>
+                                {product.tamanhos.Branco.map(eachSize =>(
                                     <li>
-                                        <button className="size_choice" type="button">39</button>
-
+                                        <button className="size_choice" type="button">{eachSize}</button>
                                     </li>
-                                    <li>
-                                        <button className="size_choice" type="button">41</button>
-
-                                </li>
+                                ))}
 
                             </ul>
-
-
                     </div>
-                    <button type="button" className="button-button">adicionar ao carrinho</button>                                               
+                    <SubmitButton id="submitProductView" value="Adicionar ao carrinho" onClick={HandleAddToCart}/>                                        
                 </div>
 
             </div>

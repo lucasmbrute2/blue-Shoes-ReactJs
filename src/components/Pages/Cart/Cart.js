@@ -11,8 +11,8 @@ export default function Cart() {
     const [value,setValue] = useState(1)
     const valor = value*99.90
     const arr = []
-    console.log(productUnique)
-    
+    console.log(cartLocal)
+
     useEffect(()=>{
         cartLocal.forEach(element=>{
             const getProduct = async ()=>{
