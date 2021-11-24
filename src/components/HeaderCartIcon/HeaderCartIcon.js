@@ -12,7 +12,6 @@ export default function HeaderCartIcon() {
             const response = await Api.getById('carrinho',id,true)
             const body = await response.json()
             setCart(body)
-            console.log(cart)
         }
     getCartId()
     },[])

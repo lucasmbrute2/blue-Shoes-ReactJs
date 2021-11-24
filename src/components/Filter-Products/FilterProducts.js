@@ -5,7 +5,6 @@ import "./FilterProducts.css"
 
 export default function FilterProducts() {
     const { product, setproduct } = useContext(Context)
-    console.log(product)
     return (
         <>
         <div>

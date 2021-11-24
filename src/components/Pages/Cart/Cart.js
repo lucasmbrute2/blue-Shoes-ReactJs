@@ -13,7 +13,7 @@ export default function Cart() {
     
     const promiseArray = async ()=>{
         const promises = cartLocal.map(async (element) => {
-            const response = await Api.getAll(`produto/${element}`,true)
+            const response = await Api.getAll(`produto/${element.id}`,true)
             const body = await response.json()
         
             return body

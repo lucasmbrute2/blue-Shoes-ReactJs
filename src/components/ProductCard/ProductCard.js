@@ -9,9 +9,8 @@ export default function ProductCard({ card }) {
     // ACESSANDO O ID DO CARRINHO DO USUÁRIO
     const { user, cartLocal, setCartLocal } = useContext(Context)    
     const id = user? user.carrinho.id : null
+    let size = 38
     
-    console.log(`ID do carrinho ${id}`)
- 
     const HandleSubmitCart = async(e,produtoId)=>{
     
         e.preventDefault()  
@@ -21,8 +20,11 @@ export default function ProductCard({ card }) {
             produtoId,
             quantidade: 1
         }
-        
-        setCartLocal([...cartLocal,produtoId])
+
+        setCartLocal([...cartLocal,{
+            tamanho: size,
+            id: produtoId,
+        }])
 
         if(user){
             const response = await Api.post('item/criar',payload,true)
