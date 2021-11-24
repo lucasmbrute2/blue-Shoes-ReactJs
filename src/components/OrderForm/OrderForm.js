@@ -62,7 +62,6 @@ export default function OrderForm({ cartLocal, price }) {
                                 <option>Frete 1</option>
                                 <option>Frete 2</option>
                                 <option>Frete 3</option>
-
                             </select>
                         </div>
                     </div>
