@@ -87,7 +87,12 @@
     color: rgba(0, 0, 0, 0.658);
 }
 
-
+.size_select{
+    outline: none;
+    height: 30px;
+    width: 50px;
+    text-align: center;
+}
 
 
 
