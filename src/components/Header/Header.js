@@ -5,6 +5,7 @@ import { useContext } from "react"
 import { Context } from "../../context/CtxApp"
 import HeaderCartIcon from "../HeaderCartIcon/HeaderCartIcon"
 import { Api } from "../../Api/Api"
+import LogoutButton from "../Buttons/LogoutButton/LogoutButton"
 
 
 
@@ -62,7 +63,14 @@ export default function Header(props){
                                 <Link to='/cart'>
                                     <HeaderCartIcon/>
                                 </Link>
+                            </li >
+                            {user? 
+                            <li className='header-li li-cart'>
+                                <LogoutButton/>
                             </li>
+                            :""    
+                            }
+                            
                         </ul>
                     </nav>
                 </div>
