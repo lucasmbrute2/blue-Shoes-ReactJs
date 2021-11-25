@@ -23,17 +23,13 @@
 }
 
 .cardProduct-div-details{
-    display: grid;
-    grid-template-columns: 2fr repeat(3, 1fr);
-    grid-template-rows: 1fr 2fr ;
-    row-gap: 40px;
-    border-bottom: 1px solid #ccc;
+    display: flex;
+    width: 500px;
 }
 
 
 /* ======ITENS DENTRO DO CONTAINER DO CARRINHO=========== */
 .CardProduct-div-details-p{
-
     padding: 20px 0;
     border-top: 1px solid #ccc;
     border-bottom: 1px solid #ccc;
@@ -41,8 +37,14 @@
     font-size: 1.2em;
 }
 .firstCard{
-
+    padding-right: 425px;
     padding-left: 3rem;
+}
+.secondCard{
+    padding-right: 50px;
+}
+.thirdCard{
+    padding-right: 50px;
 }
 .container-buttons{
     margin: auto 0;
@@ -95,6 +97,8 @@
     color: rgba(0, 0, 0, 0.856);
 }
 .price-number{
-    
-    margin: 40px 0;
+    margin: 40px 25px;
+}
+.firstNumber{
+    padding-left: 40px;
 }
