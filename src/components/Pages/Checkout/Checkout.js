@@ -11,15 +11,19 @@ export default function Checkout() {
     const { cartLocal } = useContext(Context)
     const [productUnique,setproductUnique] = useState([])
     const arr = []
-const promiseArray = async () => {
-    const promises = cartLocal.map(async (element) => {
-        const response = await Api.getAll(`produto/${element}`,true)
-        const body = await response.json()
-    
-        return body
-    })
-    const produtos = await Promise.all(promises)
-    }
+
+    const promiseArray = async ()=>{
+        const promises = cartLocal.map(async (element) => {
+            const response = await Api.getAll(`produto/${element.id}`,true)
+            const body = await response.json()
+        
+            return body
+        })
+        const produtos = await Promise.all(promises)
+        setproductUnique(produtos)
+        console.log(productUnique)
+    }   
+
     useEffect(()=>{
         promiseArray() 
     },[])
@@ -47,11 +51,13 @@ const promiseArray = async () => {
             <div className="Cart-Container">
                 <h1 className='Cart-Container-h1'>Seus itens</h1>
                 <div className='cardProduct-div'>
-                    <div className='cardProduct-div-details'>
-                        <p className='CardProduct-div-details-p firstCard'>Detalhes</p>
-                        <p className='CardProduct-div-details-p'>Quantidade</p>
-                        <p className='CardProduct-div-details-p'>Preço</p>
-                        <p className='CardProduct-div-details-p'>Total</p>
+                        <div className='cardProduct-div'>
+                            <div className='cardProduct-div-details'>
+                                <p className='CardProduct-div-details-p firstCard'>Detalhes</p>
+                                <p className='CardProduct-div-details-p secondCard'>Quantidade</p>
+                                <p className='CardProduct-div-details-p thirdCard'>Preço</p>
+                                {/* <p className='CardProduct-div-details-p'>Total</p> */}
+                            </div>
                         {productUnique.map(eachProduct=>(
                             <div className='CardProduct-div-details-div' key={eachProduct.id}>
                                 <img className='img-CardProduct' src={eachProduct.imagem}/>
@@ -60,13 +66,18 @@ const promiseArray = async () => {
                                     <p><span className='items-description-span'>Cor:</span> Azul</p>
                                     <p><span className='items-description-span'>Tamanho: </span>39</p>
                                 </div>
+                                <div className='container-buttons'>
+                                    <p className='price-number'>1</p>
+                                </div>
+                                <p className='price-number firstNumberCheckout'>{eachProduct.preco}</p>
                             </div>
                         ))}
-                        <div className='container-buttons'>
+                        </div> 
+                        {/* <div className='container-buttons'>
                             <p className='price-number'>1</p>
                         </div>
-                        <p className='price-number'>99,90</p>         
-                    </div>
+                        <p className='price-number'>99,90</p> */}         
+                    
                 </div>
             </div>
             <OrderFormCheckout cartLocal={cartLocal} price={productUnique.reduce((acc, curr)=> acc + curr.preco, 0).toFixed(2)}/>
