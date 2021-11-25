@@ -7,7 +7,6 @@ export default function BrandUnique({brand}) {
     const history = useHistory()
     const { user, setProduct } = useContext(Context)
 
-    console.log(brand.nome)
     const handleClick = async (e)=> {
         e.preventDefault()
         

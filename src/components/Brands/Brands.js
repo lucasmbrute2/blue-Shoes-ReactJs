@@ -31,7 +31,6 @@ export default function Brands(){
         </div>
         <div className='brands'>
             <div className='brands'>
-                {/* <img src={brand} className='card-logo' name='brandName'></img>  */} 
                 {brands.map((brand,index)=>(
                     <BrandUnique
                     key={index}
