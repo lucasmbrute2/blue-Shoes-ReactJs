@@ -26,6 +26,7 @@
 
 .footer-container-div-bottom{
 
+    font-family: 'Roboto',sans-serif;
     font-size: 12px;
     text-align: start;
     margin-left: 170px;
@@ -34,6 +35,11 @@
     color: #424245;
 }
 
+.bold{
+    color: #000;
+    font-size: 15px;
+    font-weight: 600;
+}
 .first{
     grid-area: first;
     border-bottom: 1px solid #000; 

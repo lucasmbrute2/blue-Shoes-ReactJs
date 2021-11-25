@@ -26,8 +26,17 @@ export default function Register(props){
             cpf
         }
         
-        const response = await Api.post('usuario/criar',payload)
-    
+        if(props.history.location.pathname ==='/register/admin'){
+          
+            var url = 'usuario/adm'
+             
+        }else{
+            var url = 'usuario'
+            
+        }
+        
+        const response = await Api.post(url,payload,true)
+        const body = await response.json()
         if(response.status ===201){
             
             const payloadLogin = {
@@ -39,19 +48,19 @@ export default function Register(props){
             const body = await response.json()
             setJwt(body.token)
             setUser(body.usuario)
-            setHeader(true)
             props.history.push('/')
             
         }else{
             alert(response.error)
         }
+           
     }
     
     return(
         <div className='register'>
             <form className='register-form' onSubmit={HandleSubmit}>              
                 <div className='register-form-title'>
-                    <Link to='/'>
+                    <Link to='/login'>
                         <i class="fas fa-arrow-left"></i>
                     </Link>
                     <h2 className='form-h2'>Registrar</h2>

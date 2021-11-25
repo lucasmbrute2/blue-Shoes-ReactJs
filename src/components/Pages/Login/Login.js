@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import "./Login.css"; 
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import SubmitButton from "../../Buttons/SubmitButton/SubmitButton"
 import { Api } from '../../../Api/Api';
 import { Context } from '../../../context/CtxApp';
@@ -8,10 +8,9 @@ import { Context } from '../../../context/CtxApp';
 
 export default function Login(props) {
     
-
     // =====CONTEXT====
 
-    const { setHeader , setUser, setJwt} = useContext(Context)
+    const { setJwt, setUser, verificationLogin } = useContext(Context)
 
     // ======FUNÇÃO DE SUBMIT========
     const HandleSubmit = async (e)=>{
@@ -27,14 +26,20 @@ export default function Login(props) {
     
         const response = await Api.post("auth/login",payload)
         const body = await response.json()
+        
+        
+        
         if (response.status===201){
-            localStorage.setItem('JWT',body.token)
+            setJwt(body.token)
             setUser(body.usuario)
-            setHeader(true)
-            props.history.push('/')
+            if(!verificationLogin){
+                props.history.push('/')
+            }else{
+                props.history.push('/checkout')
+            }
         
         }else{
-            alert('Usuário ou senha incorreta.')
+            alert("Email ou senha inválidos, tente novamente!")
         }
     }
     

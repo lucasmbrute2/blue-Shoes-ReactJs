@@ -1,8 +1,10 @@
 .products{
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  height: 100%;
+
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column; 
+    padding-top: 5rem;
 
 }
 
@@ -85,7 +87,12 @@
     color: rgba(0, 0, 0, 0.658);
 }
 
-
+.size_select{
+    outline: none;
+    height: 30px;
+    width: 50px;
+    text-align: center;
+}
 
 
 
@@ -153,4 +160,25 @@
     border: solid 1px;
     font-size: 16px;
     
+}
+
+.color_choice{
+    
+    color: #000;
+}
+.Branco{
+    background: #fff;
+}
+.Preto{
+    
+    background: #000;
+}
+.Azul{
+    background: cyan;
+}
+
+
+#submitProductView{
+    margin-top: 15px;
+    width: 200px;
 }

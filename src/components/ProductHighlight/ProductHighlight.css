@@ -6,19 +6,17 @@
 }
 
 .content-div-h2{
-
     font-family: 'Poppins',sans-serif;
     font-weight: 600;
 }
 .cardImg{
-
     align-items: center;
     text-align: center;
-
 }
 
 .cardImg-img{
     width: 200px;
+    height: 200px;
     display: block;
     margin: 0 auto;
 }
@@ -29,9 +27,13 @@
     gap: 30px;
 }
 
-.card-logo{
-    width: 50px;
-    margin: 0 10px;
+.card-container-logo{
+    height:70px;
+}
+
+.card-logo-destaque{
+    width: 70px;
+    margin:20px 0 0 20px;
 }
 
 .card-container-div{

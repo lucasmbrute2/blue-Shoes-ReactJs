@@ -1,48 +1,59 @@
 import "./ProductHighlight.css"; 
 import React, { useEffect, useState } from 'react';
-import AirForce from "../assets/airForce1.png"
-import Swoosh from "../assets/swoosh.png"
+import Nike from "../assets/nike_destaque.png"
+import Adidas from "../assets/adidas_destaque.png"
+import Mizuno from "../assets/mizuno_destaque.png"
+import Nike_Logo from "../assets/nike_logo.png"
+import Adidas_Logo from "../assets/adidas_logo.png"
+import Mizuno_Logo from "../assets/mizuno_logo.png"
+import { Api } from "../../Api/Api";
 
 export const ProductHighlight = () => {
 
     const products = [{
         id: 1,
-        name: "Air Force 1",
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-        image: AirForce,
-        unity_price: "R$149,99",
-        logo: Swoosh
+        name: "Air Max 97",
+        image: Nike,
+        logo: Nike_Logo
     },
     {
         id: 2,
-        name: "Air Force 1",
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-        image: AirForce,
-        unity_price: "R$189,99",
-        logo: Swoosh
+        name: "Adidas NMD", 
+        image: Adidas,      
+        logo: Adidas_Logo
     },
     {
         id: 1,
-        name: "Air Force 1",
-        description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt",
-        image: AirForce,
-        unity_price: "R$149,99",
-        logo: Swoosh
+        name: "Mizuno Wave",
+        image: Mizuno,
+        logo: Mizuno_Logo
     }       
     ];
 
-    //useEffect(() => {
-    //    const loadProductList = async () => {
-    //        const response = await Api.buildApiGetRequest(Api.readAllUrl());
+    const [product, setProduct] = useState([])
 
-    //        const results = await response.json();
+    useEffect(() => {
+        const loadProductList = async () => {
+            const response = await Api.getAll("produto/todos",true);
 
-    //        setProducts(results);
-    //    };
+            const results = await response.json();
 
-    //    loadProductList();
-    //}, []);
+            setProduct(results);
+            
+       };
 
+      loadProductList();
+    }, []);
+    /* console.log(product[0]._count.Item_do_carrinho)
+
+    function produtoDestaque (value) {
+        if (value>product[0]._count.Item_do_carrinho)
+        return value
+    }
+
+    var teste = product[0].filter(produtoDestaque);
+    console.log(teste) */
+    
     return(
         <div className="content container">           
             <div className='content-div'>
@@ -51,12 +62,13 @@ export const ProductHighlight = () => {
             <div className='card-container'>
                 {products.map(product=>(
                     <div className='card-container-div' key={product.id}>
-                        <img src={product.logo} className='card-logo'></img>
+                        <div className='card-container-logo'>
+                            <img src={product.logo} className='card-logo-destaque'></img>
+                        </div>
                         <div className="cardImg">                    
                             <img src={product.image} className='cardImg-img'/>
                         </div>   
                         <h2 className='card-container-h2'>{product.name}</h2>
-
                     </div>               
                 ))}         
             </div>
