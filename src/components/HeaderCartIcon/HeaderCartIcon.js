@@ -1,5 +1,4 @@
 import React, { useContext, useEffect, useState } from 'react'
-import { ModalBody } from 'react-bootstrap'
 import { Api } from '../../Api/Api'
 import { Context } from '../../context/CtxApp'
 
@@ -13,7 +12,6 @@ export default function HeaderCartIcon() {
             const response = await Api.getById('carrinho',id,true)
             const body = await response.json()
             setCart(body)
-            console.log(cart)
         }
     getCartId()
     },[])

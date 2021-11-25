@@ -37,7 +37,6 @@ export default function Register(props){
         
         const response = await Api.post(url,payload,true)
         const body = await response.json()
-        console.log(body)
         if(response.status ===201){
             
             const payloadLogin = {

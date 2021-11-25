@@ -7,22 +7,23 @@ import './Cart.css'
 export default function Cart() {
     
     const { cartLocal } = useContext(Context)
-    const [productUnique,setproductUnique] = useState([])
+    const [productUnique, setproductUnique] = useState([])
     const [value,setValue] = useState(1)
     const valor = value*99.90
-    const arr = []
-    console.log(productUnique)
     
-    useEffect(()=>{
-        cartLocal.forEach(element=>{
-            const getProduct = async ()=>{
-                const response = await Api.getAll(`produto/${element}`,true)
-                const body = await response.json()
-                arr.push(body)              
-                setproductUnique(arr)  
-            }
-            getProduct()                    
-        })         
+    const promiseArray = async ()=>{
+        const promises = cartLocal.map(async (element) => {
+            const response = await Api.getAll(`produto/${element.id}`,true)
+            const body = await response.json()
+        
+            return body
+        })
+        const produtos = await Promise.all(promises)
+        setproductUnique(produtos)
+    }
+      
+    useEffect(()=>{ 
+        promiseArray()       
     },[])
     
 

@@ -15,7 +15,6 @@ export default function Brands(){
             const response = await Api.getAll("produto/todos",true);
             const results = await response.json();
             setBrand(results);
-       };
 
        loadBrandList();
     }, []);
