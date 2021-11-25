@@ -54,7 +54,7 @@ export default function OrderForm({ cartLocal, price }) {
                                 Frete
                             </p>
                             <p>
-                                {frete}
+                                {frete.toFixed(2)}
                             </p>
                         </div>
                         <div className='container-select'>

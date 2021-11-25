@@ -10,23 +10,14 @@ export default function Brands(){
     const [brands, setBrand] = useState([])
     const { user, setProduct } = useContext(Context) 
 
-    useEffect(() => {
+    useEffect(()=>{
         const loadBrandList = async () => {
-            const response = await Api.getAll("produto/todos",true);
+            const response = await Api.getAll("marca/todas",true);
             const results = await response.json();
             setBrand(results);
-
-       loadBrandList();
-    }, []);
-
-    const brandsUnicos = new Map();
-
-    brands.forEach((brand) => {
-        if (!brandsUnicos.has(brand.logo)){
-             brandsUnicos.set(brand.logo,brand);
         }
-    })
-    const unico = [...brandsUnicos.keys()]
+        loadBrandList();
+    },[])
     
     if (!brands){
         <div>
