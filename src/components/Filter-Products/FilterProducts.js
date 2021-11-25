@@ -1,10 +1,11 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { useContext } from 'react'
+import { Api } from '../../Api/Api'
 import { Context } from '../../context/CtxApp'
 import "./FilterProducts.css"
 
 export default function FilterProducts() {
-    const { product, setproduct } = useContext(Context)
+    const { product } =  useContext(Context) 
     return (
         <>
         <div>

@@ -20,13 +20,13 @@ export default function Header(props){
         e.preventDefault()
         
         const searchProduct = e.target.searchProduct.value
-        
         const response = await Api.getAll(`produto?nome=${searchProduct}`)
         const body = await response.json()
         setProduct(body)
         history.push('/products')
  
     }
+    
     
     return(
         <div className='header header-height'>
@@ -50,6 +50,11 @@ export default function Header(props){
                                 <i class="fas fa-home"></i> Home
                                 </Link>
                             </li>
+                            <li className='header-li li-cart'>
+                                <Link to='/cart'>
+                                    <HeaderCartIcon/>
+                                </Link>
+                            </li >
                             <li className='header-li'>
                                 {user? 
                                 <Link to='/' className='header-li-link'>
@@ -59,11 +64,6 @@ export default function Header(props){
                                     Entrar
                                 </Link>}                            
                             </li>
-                            <li className='header-li li-cart'>
-                                <Link to='/cart'>
-                                    <HeaderCartIcon/>
-                                </Link>
-                            </li >
                             {user? 
                             <li className='header-li li-cart'>
                                 <LogoutButton/>

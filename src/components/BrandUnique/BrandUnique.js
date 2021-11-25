@@ -10,7 +10,7 @@ export default function BrandUnique({brand}) {
     const handleClick = async (e)=> {
         e.preventDefault()
         
-        const response = await Api.getAll(`produto?marca=${brand.marca}`)
+        const response = await Api.getAll(`produto?marca=${brand.nome}`)
         const body = await response.json()
         setProduct(body)
         history.push('/products')
