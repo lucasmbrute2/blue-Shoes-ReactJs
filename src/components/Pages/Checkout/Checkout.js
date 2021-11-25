@@ -1,12 +1,28 @@
-import React from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import './Checkout.css'
 import Footer from '../../Footer/Footer'
 import { Field, Form, Formik } from 'formik'
 import OrderFormCheckout from '../../OrderFormCheckout/OrderFormCheckout'
+import { Api } from '../../../Api/Api'
+import { Context } from '../../../context/CtxApp'
 
 
 export default function Checkout() {
+    const { cartLocal } = useContext(Context)
+    const [productUnique,setproductUnique] = useState([])
+    const arr = []
+const promiseArray = async () => {
+    const promises = cartLocal.map(async (element) => {
+        const response = await Api.getAll(`produto/${element}`,true)
+        const body = await response.json()
     
+        return body
+    })
+    const produtos = await Promise.all(promises)
+    }
+    useEffect(()=>{
+        promiseArray() 
+    },[])
     function onBlurCep(e,setFieldValue){
         const { value } = e.target
 
@@ -36,14 +52,16 @@ export default function Checkout() {
                         <p className='CardProduct-div-details-p'>Quantidade</p>
                         <p className='CardProduct-div-details-p'>Preço</p>
                         <p className='CardProduct-div-details-p'>Total</p>
-                        <div className='CardProduct-div-details-div'>
-                            <img className='img-CardProduct' src="https://images.tcdn.com.br/img/img_prod/938519/180_tenis_nike_air_force_1_low_reflective_swoosh_2021_1_8a5c09e4c39fad02f606d8a53323487e_20210812081513.png"/>
-                            <div className='items-description'>
-                                <h3 className='items-description-h3'>AirForce 1</h3>
-                                <p><span className='items-description-span'>Cor:</span> Azul</p>
-                                <p><span className='items-description-span'>Tamanho: </span>39</p>
+                        {productUnique.map(eachProduct=>(
+                            <div className='CardProduct-div-details-div' key={eachProduct.id}>
+                                <img className='img-CardProduct' src={eachProduct.imagem}/>
+                                <div className='items-description'>
+                                    <h3 className='items-description-h3'>{eachProduct.nome}</h3>
+                                    <p><span className='items-description-span'>Cor:</span> Azul</p>
+                                    <p><span className='items-description-span'>Tamanho: </span>39</p>
+                                </div>
                             </div>
-                        </div>
+                        ))}
                         <div className='container-buttons'>
                             <p className='price-number'>1</p>
                         </div>
@@ -51,7 +69,7 @@ export default function Checkout() {
                     </div>
                 </div>
             </div>
-            <OrderFormCheckout/>
+            <OrderFormCheckout cartLocal={cartLocal} price={productUnique.reduce((acc, curr)=> acc + curr.preco, 0).toFixed(2)}/>
             </div>
             <div className='Container-checkout'>
                 <div className='Container-entrega'>
