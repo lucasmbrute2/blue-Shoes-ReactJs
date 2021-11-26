@@ -11,7 +11,6 @@ export default function ProductCardView({ product }) {
     let size = 39
     let sneakerColor = Object.keys(product.tamanhos)
 
-    
     const HandleAddToCart = (e) =>{
         e.preventDefault()  
 

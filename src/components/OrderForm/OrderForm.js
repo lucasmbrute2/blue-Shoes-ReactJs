@@ -46,7 +46,7 @@ export default function OrderForm({ cartLocal, price }) {
                                 Itens {cartLocal.length}
                             </p>
                             <p>
-                                {price}
+                                R$ {price}
                             </p>
                         </div>
                         <div className='container-p'>
@@ -54,7 +54,7 @@ export default function OrderForm({ cartLocal, price }) {
                                 Frete
                             </p>
                             <p>
-                                {frete.toFixed(2)}
+                                R$ {frete.toFixed(2)}
                             </p>
                         </div>
                         <div className='container-select'>
@@ -71,7 +71,7 @@ export default function OrderForm({ cartLocal, price }) {
                             Custo total
                         </h2>
                         <p>
-                           {totalCost} 
+                           R$ {totalCost} 
                         </p>
                     </div>
                     <SubmitButton id='submitButton-orderForm' value={"Continuar"}/>

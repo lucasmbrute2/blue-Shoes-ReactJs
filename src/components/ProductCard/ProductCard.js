@@ -30,11 +30,11 @@ export default function ProductCard({ card }) {
         const sucessAlert = () => {
             toast.success("Adicionado ao carrinho",{position: toast.POSITION.TOP_RIGHT})
         }
+        sucessAlert()            
         if(user){
             const response = await Api.post('item/criar',payload,true)
             const body = await response.json()
-            if(response.status ===201){
-                sucessAlert()            
+            if(response.status ===200){
             }
         }
     }
