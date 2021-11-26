@@ -2,14 +2,16 @@ import React, { useContext, useEffect, useState } from "react";
 import "./ProductCardView.css"; 
 import SubmitButton from "../Buttons/SubmitButton/SubmitButton";
 import { Context } from "../../context/CtxApp";
-import { useHistory } from "react-router";
+import { toast, ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function ProductCardView({ product }) {
     
     const { cartLocal, setCartLocal } = useContext(Context)
     let size = 39
     let sneakerColor = Object.keys(product.tamanhos)
-    console.log(product)
+
+    
     const HandleAddToCart = (e) =>{
         e.preventDefault()  
 
@@ -17,10 +19,14 @@ export default function ProductCardView({ product }) {
             tamanho: size,
             id: product.id,
         }])
-        alert("Produto adicionado ao carrinho")  
+        const sucessAlert = () => {
+            toast.success("Adicionado ao carrinho",{position: toast.POSITION.TOP_RIGHT})
+        }
+        sucessAlert()    
     }
     
     return (
+        <>
         <div className="products">
             <form onSubmit={(e)=>HandleAddToCart(e)}>            
                 <div className="product">
@@ -40,10 +46,10 @@ export default function ProductCardView({ product }) {
                         </div>
 
                         <div className="card__color">
-                            <p className="card__color__color">  Escolha a cor desejada:</p>
+                            <p className="card__color__color">Cor:</p>
                             <ul className="color_options">
                                 <li>
-                                    <button className={`color_choice ${sneakerColor}`} type="button" ></button>
+                                    <button className='color_choice' style={{ background: `${sneakerColor}` }}  type="button" ></button>
                                 </li>
                             </ul>
                         </div>
@@ -52,15 +58,15 @@ export default function ProductCardView({ product }) {
                             <p className='card-size-p'> Escolha o tamanho desejado:</p>
                                 <ul className="size_options"> 
                                     <select className='size_select'>
-                                        {product.tamanhos.Branco?.map(eachSize =>(
+                                        {product.tamanhos.white?.map(eachSize =>(
                                             <option className="size_choice" type="button" onClick={size=eachSize}>{eachSize}</option>
                                             ))}
-                                        {product.tamanhos.preto?.map(eachSize =>(
+                                        {product.tamanhos.black?.map(eachSize =>(
                                             <option className="size_choice" type="button" onClick={size=eachSize}>{eachSize}</option>
                                             ))}
-                                        {product.tamanhos.preto?.map(eachSize =>(
+                                        {product.tamanhos.blue?.map(eachSize =>(
                                             <option className="size_choice" type="button" onClick={size=eachSize}>{eachSize}</option>
-                                            ))}                                            
+                                            ))}                     
                                     </select>
                                 </ul>
                         </div>
@@ -68,7 +74,8 @@ export default function ProductCardView({ product }) {
                     </div>
                 </div>
             </form>
-
         </div>
+        <ToastContainer/>
+        </>
     )
 }

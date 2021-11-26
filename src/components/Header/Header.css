@@ -3,7 +3,7 @@
     box-shadow: 0 10px 25px rgba(92, 99, 105, 0.068);
     height: var(--header-height);
     position: fixed;
-    z-index: 10000;
+    z-index: 1;
     background-color: #fff;
 }
 .header-container{
@@ -120,4 +120,27 @@
     color: #000;
     margin-left: 0;
     font-size: 1.3em;
+}
+
+.logout-p{
+    margin-bottom: 0;
+}
+.modal-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.modal-container-p{
+    font-family: 'Roboto',sans-serif;
+    padding-top: .5rem;
+}
+
+.modal-title{
+    font-family: 'Poppins',sans-serif;
+    font-size: 20px;
+    padding: 1.2rem;
+}
+
+.logout{
+    color: rgba(255, 0, 0, 0.829);
 }

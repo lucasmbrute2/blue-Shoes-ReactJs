@@ -44,16 +44,7 @@ export const ProductHighlight = () => {
 
       loadProductList();
     }, []);
-    /* console.log(product[0]._count.Item_do_carrinho)
 
-    function produtoDestaque (value) {
-        if (value>product[0]._count.Item_do_carrinho)
-        return value
-    }
-
-    var teste = product[0].filter(produtoDestaque);
-    console.log(teste) */
-    
     return(
         <div className="content container">           
             <div className='content-div'>
