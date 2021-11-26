@@ -1,0 +1,142 @@
+/* Navibar  */
+
+:root {
+  --cor-fundo: rgb(0, 0, 0);
+  --cor-hover: rgb(17, 167, 187);
+  --cor-primaria: rgb(231, 241, 236);
+}
+
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--cor-fundo);
+  width: 100%;
+  height: 77px;
+  padding: 10px 20px;
+}
+
+.logo__admin {
+  width: 100px;
+}
+
+.dp-menu {
+  width: 700px;
+  display: flex;
+  justify-content: flex-start;
+  padding-top: 10px;
+}
+
+.dp-menu ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dp-menu ul {
+  background-color: var(--cor-fundo);
+}
+
+.dp-menu ul li {
+  display: inline;
+  position: relative;
+}
+
+.dp-menu ul li a {
+  color: var(--cor-primaria);
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px;
+  transition: background 0.3s;
+}
+
+.dp-menu ul li a:hover {
+  color: var(--cor-hover);
+}
+
+.dp-menu ul ul {
+  display: none;
+  left: 0;
+  position: absolute;
+}
+
+.dp-menu ul li:hover ul {
+  display: block;
+}
+
+.dp-menu ul ul {
+  width: 150px;
+}
+
+.dp-menu ul ul li a {
+  display: block;
+}
+
+.ul_primary {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dp-menu .ul_second {
+  position: relative;
+  left: 250px;
+  display: flex;
+  align-items: center;
+  color: white;
+}
+
+/* Cadastro de Produtos */
+
+.cad__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.h1__inicio {
+  text-decoration: underline;
+}
+
+.form__main {
+  border-radius: 5px;
+  width: 700px;
+}
+
+.form__label {
+  display: flex;
+  flex-direction: column;
+}
+
+.form__input {
+  all: unset;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.form__input:focus {
+  outline: 2px solid grey;
+}
+
+.button__enviar {
+  all: unset;
+  padding: 2px 10px;
+  background-color: rgba(0, 0, 0, 0.603);
+  border-radius: 5px;
+  color: white;
+  margin-top: 5px;
+}
+
+.button__enviar :hover {
+  background-color: rgba(0, 0, 0, 0.856);
+}
+
+.label__part {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input__1,
+.input__2 {
+  width: 330px;
+}

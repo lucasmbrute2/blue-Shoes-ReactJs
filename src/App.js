@@ -6,25 +6,25 @@ import Login from "./components/Pages/Login/Login";
 import Register from "./components/Pages/Register/Register";
 import ViewProduct from "./components/Pages/ViewProduct/ViewProduct";
 import Cart from "./components/Pages/Cart/Cart";
-import Header from "./components/Header/Header";
 import Products from "./components/Pages/Products/Products";
 import { CtxApp } from "./context/CtxApp";
 import Checkout from "./components/Pages/Checkout/Checkout";
+import AdminPage from "./components/Pages/Admin/Admin";
 
 function App() {
   return (
     <CtxApp>
       <Router>
-        <Header/>
         <Switch>
-          <Route path="/" exact={true} component = {Home}/>
-          <Route path='/login' component={Login}/>
-          <Route path='/register' component={Register}/>
-          <Route path='/register/admin' component={Register}/>
-          <Route path='/view/:id' component={ViewProduct}/>
-          <Route path='/cart' component={Cart}/>
-          <Route path='/products' component={Products}/>
-          <Route path='/checkout' component={Checkout}/>
+          <Route path="/admin" component={AdminPage} />
+          <Route path="/" exact={true} component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/register" component={Register} />
+          <Route path="/register/admin" component={Register} />
+          <Route path="/view/:id" component={ViewProduct} />
+          <Route path="/cart" component={Cart} />
+          <Route path="/products" component={Products} />
+          <Route path="/checkout" component={Checkout} />
         </Switch>
       </Router>
     </CtxApp>
