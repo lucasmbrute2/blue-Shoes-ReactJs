@@ -2,13 +2,14 @@ import React, { useContext, useEffect, useState } from "react";
 import "./ProductCardView.css"; 
 import SubmitButton from "../Buttons/SubmitButton/SubmitButton";
 import { Context } from "../../context/CtxApp";
+import { useHistory } from "react-router";
 
 export default function ProductCardView({ product }) {
     
     const { cartLocal, setCartLocal } = useContext(Context)
     let size = 39
     let sneakerColor = Object.keys(product.tamanhos)
-
+    const history = useHistory()
     
     const HandleAddToCart = (e) =>{
         e.preventDefault()  
@@ -18,6 +19,7 @@ export default function ProductCardView({ product }) {
             id: product.id,
         }])
         alert("Produto adicionado ao carrinho")  
+        history.push('/cart')
     }
     
     return (

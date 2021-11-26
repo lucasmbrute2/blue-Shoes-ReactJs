@@ -4,6 +4,7 @@ import { Context } from '../../../context/CtxApp'
 import OrderForm from '../../OrderForm/OrderForm'
 import './Cart.css'
 import Footer from "../../Footer/Footer";
+import { Link } from 'react-router-dom'
 
 export default function Cart() {
     
@@ -66,7 +67,9 @@ export default function Cart() {
                             </div>
                             {productUnique.map(eachProduct=>(
                             <div className='CardProduct-div-details-div' key={eachProduct.id}>
-                                <img className='img-CardProduct' src={eachProduct.imagem}/>
+                                <Link to={`/view/${eachProduct.id}`}>
+                                    <img className='img-CardProduct' src={eachProduct.imagem}/>
+                                </Link>
                                 <div className='items-description'>
                                     <h3 className='items-description-h3'>{eachProduct.nome}</h3>
                                     <p><span className='items-description-span'>Cor:</span> Azul</p>
