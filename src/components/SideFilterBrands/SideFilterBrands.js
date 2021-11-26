@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { useHistory } from 'react-router'
 import { Api } from '../../Api/Api'
 import { Context } from '../../context/CtxApp'
 
-export default function BrandUnique({brand}) {
-    const history = useHistory()
+export default function SideFilterBrands({brand}) {
+    
     const { setProduct } = useContext(Context)
     const handleClick = async (e)=> {
         e.preventDefault()
@@ -12,12 +12,10 @@ export default function BrandUnique({brand}) {
         const response = await Api.getAll(`produto?marca=${brand.nome}`)
         const body = await response.json()
         setProduct(body)
-        history.push('/products')
     }
-
     return (
-        <div  onClick={handleClick}>
-            <img src={brand.logo} className='card-logo' name='brandName'></img>
+        <div>
+            <p onClick={handleClick}>{brand.nome}</p>
         </div>
     )
 }

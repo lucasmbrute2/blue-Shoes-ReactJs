@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Api } from "../../../Api/Api";
+import Footer from "../../Footer/Footer";
 import ProductCardView from "../../ProductCardView/ProductCardView";
 import "./ViewProduct.css";
 
@@ -21,10 +22,13 @@ export default function ViewProduct (props)  {
         return <div>Loading...</div>
     }
     return (
+        <>
         <div className="view">
             <div className="view-product">
                 <ProductCardView product={product} />
             </div>
         </div>
+        <Footer/>
+        </>
     )
 }
