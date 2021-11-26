@@ -15,12 +15,12 @@ export default function AdminHeader(props) {
     }
   }
   verificaUsuario(user);
-  
+
   return (
     <div>
       <div className="main-container">
         <Link to="/">
-          <img src={blueShoes} alt="logo" />
+          <img src={blueShoes} className="logo__admin" alt="logo" />
         </Link>
         <div className="dp-menu">
           <ul className="ul_primary">

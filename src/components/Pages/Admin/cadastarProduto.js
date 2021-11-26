@@ -10,20 +10,20 @@ export default function CadastarProd(props) {
   const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const nome = event.target.nome.value;
-    const descricao = event.target.descricao.value;
-    const imagem = event.target.imagem.value;
-    const preco = Number(event.target.preco.value);
-    const cor = event.target.cor.value;
-    const marcaId = Number(escolha);
-    const tamanho1 = event.target.tamanho.value.split(",");
-    const tamanho = [];
+    let nome = event.target.nome.value;
+    let descricao = event.target.descricao.value;
+    let imagem = event.target.imagem.value;
+    let preco = Number(event.target.preco.value);
+    let cor = event.target.cor.value;
+    let marcaId = Number(escolha);
+    let tamanho1 = event.target.tamanho.value.split(",");
+    let tamanho = [];
 
-    for(let i in tamanho1.length){
-      tamanho.push(tamanho1[i])
+    for (let i in tamanho1.length) {
+      tamanho.push(tamanho1[i]);
     }
 
-    console.log(typeof tamanho)
+    console.log(preco);
 
     const payload = {
       nome,
@@ -38,6 +38,14 @@ export default function CadastarProd(props) {
     const response = await Api.post("produto/criar", payload, true);
     if (response.status === 201) {
       alert("Produto Cadastrado Com sucesso");
+      event.target.nome.value = "";
+      event.target.descricao.value = "";
+      imagem = event.target.imagem.value = "";
+      event.target.preco.value = "";
+      event.target.cor.value = "";
+      event.target.tamanho.value = "";
+    } else {
+      alert("Não Foi possivel Cadastrar o Produto");
     }
   };
 
@@ -58,7 +66,7 @@ export default function CadastarProd(props) {
   return (
     <div className="cad__main">
       <form className="form__main" onSubmit={handleSubmit}>
-        <h1>Cadastrar Produto</h1>
+        <h1 className="h1__inicio">Cadastrar Produto</h1>
         <label htmlFor="nome" className="form__label">
           Nome:
           <input type="text" id="nome" name="nome" className="form__input" />
@@ -134,7 +142,9 @@ export default function CadastarProd(props) {
             />
           </label>
         </div>
-        <button type="submit">Enviar</button>
+        <button type="submit" className="button__enviar">
+          Enviar
+        </button>
       </form>
     </div>
   );
