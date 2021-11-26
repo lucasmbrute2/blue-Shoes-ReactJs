@@ -3,6 +3,8 @@ import React, { useContext, useEffect, useRef } from 'react'
 import { Link } from "react-router-dom"
 import { Context } from "../../context/CtxApp"
 import { Api } from "../../Api/Api"
+import { toast, ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function ProductCard({ card }) {
 
@@ -25,16 +27,19 @@ export default function ProductCard({ card }) {
             tamanho: size,
             id: produtoId,
         }])
-
+        const sucessAlert = () => {
+            toast.success("Adicionado ao carrinho",{position: toast.POSITION.TOP_RIGHT})
+        }
         if(user){
             const response = await Api.post('item/criar',payload,true)
             const body = await response.json()
             if(response.status ===201){
-                              
+                sucessAlert()            
             }
         }
     }
     return (
+        <>
         <div className='productCard'>
             {card.map(eachCard=>(
                 <form onSubmit={(e)=>HandleSubmitCart(e,eachCard.id)} className='productCard-form'>
@@ -53,5 +58,7 @@ export default function ProductCard({ card }) {
                 </form>                 
             ))}
         </div>
+        <ToastContainer/>
+        </>
     )
 }

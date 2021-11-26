@@ -3,6 +3,8 @@ import { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { Context } from '../../context/CtxApp'
 import "./FilterProducts.css"
+import { toast, ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function FilterProducts() {
     const { cartLocal, setCartLocal, product } =  useContext(Context) 
@@ -12,6 +14,11 @@ export default function FilterProducts() {
             tamanho: 39,
             id: productId
         }])
+
+        const sucessAlert = () => {
+            toast.success("Adicionado ao carrinho",{position: toast.POSITION.TOP_RIGHT})
+        }
+        sucessAlert()            
     }
     
     return (
@@ -39,6 +46,7 @@ export default function FilterProducts() {
             ))}         
         </div>
         </div>
+        <ToastContainer/>
         </>
     )
 }

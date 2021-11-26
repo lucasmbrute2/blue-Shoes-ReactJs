@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from "react";
 import "./ProductCardView.css"; 
 import SubmitButton from "../Buttons/SubmitButton/SubmitButton";
 import { Context } from "../../context/CtxApp";
+import { toast, ToastContainer } from "react-toastify"
+import 'react-toastify/dist/ReactToastify.css'
 
 export default function ProductCardView({ product }) {
     
@@ -17,10 +19,14 @@ export default function ProductCardView({ product }) {
             tamanho: size,
             id: product.id,
         }])
-        alert("Produto adicionado ao carrinho")  
+        const sucessAlert = () => {
+            toast.success("Adicionado ao carrinho",{position: toast.POSITION.TOP_RIGHT})
+        }
+        sucessAlert()    
     }
     
     return (
+        <>
         <div className="products">
             <form onSubmit={(e)=>HandleAddToCart(e)}>            
                 <div className="product">
@@ -68,7 +74,8 @@ export default function ProductCardView({ product }) {
                     </div>
                 </div>
             </form>
-
         </div>
+        <ToastContainer/>
+        </>
     )
 }

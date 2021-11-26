@@ -3,7 +3,7 @@
     box-shadow: 0 10px 25px rgba(92, 99, 105, 0.068);
     height: var(--header-height);
     position: fixed;
-    z-index: 10000;
+    z-index: 1;
     background-color: #fff;
 }
 .header-container{
