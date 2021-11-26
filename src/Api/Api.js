@@ -1,6 +1,6 @@
 export const Api = {
         
-    baseUrl: "https://dev-blueshoes.herokuapp.com/",
+    baseUrl: "https://blueshoes.herokuapp.com/",
 
     authHeader: ()=>({
         Authorization : "Bearer "+ localStorage.getItem('JWT')
