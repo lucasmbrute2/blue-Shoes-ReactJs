@@ -5,8 +5,7 @@ import { Context } from '../../context/CtxApp'
 
 export default function BrandUnique({brand}) {
     const history = useHistory()
-    const { user, setProduct } = useContext(Context)
-
+    const { setProduct } = useContext(Context)
     const handleClick = async (e)=> {
         e.preventDefault()
         
