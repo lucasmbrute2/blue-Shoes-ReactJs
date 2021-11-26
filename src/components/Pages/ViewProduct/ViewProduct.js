@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Api } from "../../../Api/Api";
+import Footer from "../../Footer/Footer";
 import ProductCardView from "../../ProductCardView/ProductCardView";
 import Header from "../../Header/Header";
 import "./ViewProduct.css";
