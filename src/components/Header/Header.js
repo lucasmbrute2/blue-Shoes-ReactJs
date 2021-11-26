@@ -7,10 +7,8 @@ import HeaderCartIcon from "../HeaderCartIcon/HeaderCartIcon"
 import { Api } from "../../Api/Api"
 import LogoutButton from "../Buttons/LogoutButton/LogoutButton"
 
-
-
-export default function Header(props){
-
+export default function Header(){
+    
     const history = useHistory()
     const { user, setProduct } = useContext(Context) 
     
