@@ -14,8 +14,6 @@ export default function Header(props){
     const history = useHistory()
     const { user, setProduct } = useContext(Context) 
     
-    
-   
     const goLogin = async (e)=> {
         e.preventDefault()
         
@@ -26,7 +24,6 @@ export default function Header(props){
         history.push('/products')
  
     }
-    
     
     return(
         <div className='header header-height'>
