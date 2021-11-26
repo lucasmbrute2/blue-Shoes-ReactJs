@@ -1,70 +1,84 @@
-import React, { useContext } from 'react'
-import "./Login.css"; 
+import React, { useContext } from "react";
+import "./Login.css";
 import { Link, useHistory } from "react-router-dom";
-import SubmitButton from "../../Buttons/SubmitButton/SubmitButton"
-import { Api } from '../../../Api/Api';
-import { Context } from '../../../context/CtxApp';
-
+import SubmitButton from "../../Buttons/SubmitButton/SubmitButton";
+import { Api } from "../../../Api/Api";
+import { Context } from "../../../context/CtxApp";
+import Header from "../../Header/Header";
 
 export default function Login(props) {
-    
-    // =====CONTEXT====
+  // =====CONTEXT====
 
-    const { setJwt, setUser, verificationLogin } = useContext(Context)
+  const { setJwt, setUser, verificationLogin } = useContext(Context);
 
-    // ======FUNÇÃO DE SUBMIT========
-    const HandleSubmit = async (e)=>{
-        e.preventDefault()
-        
-        const email = e.target.email.value
-        const senha = e.target.senha.value
+  // ======FUNÇÃO DE SUBMIT========
+  const HandleSubmit = async (e) => {
+    e.preventDefault();
 
-        const payload = {
-            email,
-            senha
-        }
-    
-        const response = await Api.post("auth/login",payload)
-        const body = await response.json()
-        
-        
-        
-        if (response.status===201){
-            setJwt(body.token)
-            setUser(body.usuario)
-            if(!verificationLogin){
-                props.history.push('/')
-            }else{
-                props.history.push('/checkout')
-            }
-        
-        }else{
-            alert("Email ou senha inválidos, tente novamente!")
-        }
+    const email = e.target.email.value;
+    const senha = e.target.senha.value;
+
+    const payload = {
+      email,
+      senha,
+    };
+
+    const response = await Api.post("auth/login", payload);
+    const body = await response.json();
+
+    if (response.status === 201) {
+      localStorage.setItem("JWT", body.token);
+      setUser(body.usuario);
+      if (!verificationLogin) {
+        props.history.push("/");
+      } else {
+        props.history.push("/checkout");
+      }
+    } else {
+      alert("Email ou senha inválidos, tente novamente!");
     }
-    
-    return (
-        <div className='form-container'>
-            <form className='form' onSubmit={HandleSubmit}>
-                <h2 className='form-h2'>Entrar</h2>
-                <div className='form-div'>
-                    <input className='form-div-input' placeholder=' ' name='email' required></input>
-                    <label className='form-div-label'>Email</label>
-                </div>
-            
-                <div className='form-div'>
-                    <input type='password' className='form-div-input' placeholder=' ' autoComplete={false} name='senha' required></input>
-                    <label className='form-div-label'>Senha</label>
-                </div>
-                <div>
-                    <SubmitButton/>
-                </div>
-               
-                <div className='form-div-links'>
-                    <p className='form-div-links-p'>Não tem uma conta?<Link to='/register' className='form-button-links-link'>Cadastre aqui</Link></p>
-                    <p className='form-div-links-p'>Lembrar minha senha</p>
-                </div>
-            </form>
+  };
+
+  return (
+    <div className="form-container">
+      <Header />
+      <form className="form" onSubmit={HandleSubmit}>
+        <h2 className="form-h2">Entrar</h2>
+        <div className="form-div">
+          <input
+            className="form-div-input"
+            placeholder=" "
+            name="email"
+            required
+          ></input>
+          <label className="form-div-label">Email</label>
         </div>
-    )
+
+        <div className="form-div">
+          <input
+            type="password"
+            className="form-div-input"
+            placeholder=" "
+            autoComplete={false}
+            name="senha"
+            required
+          ></input>
+          <label className="form-div-label">Senha</label>
+        </div>
+        <div>
+          <SubmitButton />
+        </div>
+
+        <div className="form-div-links">
+          <p className="form-div-links-p">
+            Não tem uma conta?
+            <Link to="/register" className="form-button-links-link">
+              Cadastre aqui
+            </Link>
+          </p>
+          <p className="form-div-links-p">Lembrar minha senha</p>
+        </div>
+      </form>
+    </div>
+  );
 }

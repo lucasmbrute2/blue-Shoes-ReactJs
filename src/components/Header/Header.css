@@ -1,123 +1,120 @@
-.header{
-    width: 100%;  
-    box-shadow: 0 10px 25px rgba(92, 99, 105, 0.068);
-    height: var(--header-height);
-    position: fixed;
-    z-index: 10000;
-    background-color: #fff;
+.header {
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.068);
+  height: var(--header-height);
+  position: fixed;
+  top: 0;
+  z-index: 10000;
+  background-color: #fff;
 }
-.header-container{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.header-logo{
-    font-family: 'Poppins',sans-serif;
-    width: 130px;
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.header-div-input{
-    position: relative;
-}
-.header-searchBar{
-    outline: none;
-    border-radius: 9999px;
-    padding: .4rem 1rem .3rem 1rem;
-    box-sizing: border-box;
-    border: 1px solid #ccc;
-    font-family: 'Roboto', sans-serif;
-    background-color: #fff;
-    font-size: .9em;
-    z-index:1;
-    width: 350px;
+.header-logo {
+  font-family: "Poppins", sans-serif;
+  width: 130px;
 }
 
-.header-searchBar:focus{
-
-    border: 2px solid #4ca1ea;
-    -webkit-box-shadow: 3px 13px 39px -10px rgba(0,0,0,0.13); 
-    box-shadow: 4px 5px 31px -13px #4ca1ea;
+.header-div-input {
+  position: relative;
+}
+.header-searchBar {
+  outline: none;
+  border-radius: 9999px;
+  padding: 0.4rem 1rem 0.3rem 1rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  font-family: "Roboto", sans-serif;
+  background-color: #fff;
+  font-size: 0.9em;
+  z-index: 1;
+  width: 350px;
 }
 
-.header-ul{
-    display: flex;
-    list-style: none;
-    margin-bottom: 0;
+.header-searchBar:focus {
+  border: 2px solid #4ca1ea;
+  -webkit-box-shadow: 3px 13px 39px -10px rgba(0, 0, 0, 0.13);
+  box-shadow: 4px 5px 31px -13px #4ca1ea;
 }
 
-.header-li{
-    margin-left: 25px;
-    font-family: 'Roboto', sans-serif;
-    font-size: 1em;
-    cursor: pointer;
-    font-weight: 500;
+.header-ul {
+  display: flex;
+  list-style: none;
+  margin-bottom: 0;
 }
 
-.li-cart{
-    position: relative;
+.header-li {
+  margin-left: 25px;
+  font-family: "Roboto", sans-serif;
+  font-size: 1em;
+  cursor: pointer;
+  font-weight: 500;
 }
 
-.header-li-cartArray{
-    position: absolute;
-    height: 1rem;
-    width: 1.2rem;
-    border-radius: 100%;
-    background-color: #1a9fdd;
-    top: -0.625rem;
-    right: -0.625rem ;
-    line-height: 1rem;
-    text-align: center;
-    color: #fff;
-    font-size: .75rem;
-
+.li-cart {
+  position: relative;
 }
 
-.header-li-span{
-    color: black;
-    margin-right: 5px;
-}
-.header-li-link, .header-li-link:hover{
-    
-    color: #000;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 1em;
-
-}
-
-.header-li-link-signIn{
-    color: #000;
-    text-decoration: none;
+.header-li-cartArray {
+  position: absolute;
+  height: 1rem;
+  width: 1.2rem;
+  border-radius: 100%;
+  background-color: #1a9fdd;
+  top: -0.625rem;
+  right: -0.625rem;
+  line-height: 1rem;
+  text-align: center;
+  color: #fff;
+  font-size: 0.75rem;
 }
 
-.header-li-link-signIn:hover{
-    color: #000;
+.header-li-span {
+  color: black;
+  margin-right: 5px;
+}
+.header-li-link,
+.header-li-link:hover {
+  color: #000;
+  font-family: "Roboto", sans-serif;
+  font-weight: 500;
+  font-size: 1em;
+}
+
+.header-li-link-signIn {
+  color: #000;
+  text-decoration: none;
+}
+
+.header-li-link-signIn:hover {
+  color: #000;
 }
 /* =========FONT AWSOME========= */
 
-.fa-search{
-    position: absolute;
-    right: 4%;
-    transform: translateY(50%);
-    font-size: 1em;
-    color: rgba(0, 0, 0, 0.493);
-    z-index: 10;
+.fa-search {
+  position: absolute;
+  right: 4%;
+  transform: translateY(50%);
+  font-size: 1em;
+  color: rgba(0, 0, 0, 0.493);
+  z-index: 10;
 }
 
-.fa-home{
-    margin-right: 5px; 
-    color:#000;
-
+.fa-home {
+  margin-right: 5px;
+  color: #000;
 }
-.link-fa, .link-fa:hover{
-    color:#000;
-    text-decoration: none;
-
+.link-fa,
+.link-fa:hover {
+  color: #000;
+  text-decoration: none;
 }
 
-.fa-shopping-cart{
-    color: #000;
-    margin-left: 0;
-    font-size: 1.3em;
+.fa-shopping-cart {
+  color: #000;
+  margin-left: 0;
+  font-size: 1.3em;
 }

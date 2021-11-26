@@ -1,21 +1,21 @@
 import React from "react";
 import "./Home.css";
-import Footer from "../../Footer/Footer"
-import ProductHighlight  from "../../ProductHighlight/ProductHighlight";
+import Footer from "../../Footer/Footer";
+import ProductHighlight from "../../ProductHighlight/ProductHighlight";
 import Brands from "../../Brands/Brands";
 import HomeCarousel from "../../Home-Carousel/HomeCarousel";
-import ProductList from "../../ProductList/ProductList"
+import ProductList from "../../ProductList/ProductList";
+import Header from "../../Header/Header";
 
 export default function Home() {
-  return(
+  return (
     <>
-      <HomeCarousel/>
-      <ProductHighlight/>
-      <Brands/>
-      <ProductList/>   
-      <Footer/>
+      <Header />
+      <HomeCarousel />
+      <ProductHighlight />
+      <Brands />
+      <ProductList />
+      <Footer />
     </>
-  ) 
-  
-  
+  );
 }
