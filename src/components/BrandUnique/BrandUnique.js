@@ -4,6 +4,7 @@ import { Api } from '../../Api/Api'
 import { Context } from '../../context/CtxApp'
 
 export default function BrandUnique({brand}) {
+    console.log(brand)
     const history = useHistory()
     const { setProduct } = useContext(Context)
     const handleClick = async (e)=> {
@@ -17,7 +18,7 @@ export default function BrandUnique({brand}) {
 
     return (
         <div  onClick={handleClick}>
-            <img src={brand.logo} className='card-logo' name='brandName'></img>
+            <img src={brand.logo_parceiro} className='card-logo' name='brandName'></img>
         </div>
     )
 }
