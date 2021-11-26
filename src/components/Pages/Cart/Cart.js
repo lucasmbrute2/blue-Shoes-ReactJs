@@ -8,11 +8,11 @@ import { Link } from 'react-router-dom'
 
 export default function Cart() {
     
-    const { cartLocal } = useContext(Context)
+    const { cartLocal, setCartLocal } = useContext(Context)
     const [productUnique, setproductUnique] = useState([])
     const [value,setValue] = useState(1)
     const valor = value*99.90
-    
+
     const promiseArray = async ()=>{
         const promises = cartLocal.map(async (element) => {
             const response = await Api.getAll(`produto/${element.id}`,true)
@@ -28,7 +28,16 @@ export default function Cart() {
         promiseArray()       
     },[])
     
-
+    const removeItem = (index)=>{
+        const arr = productUnique
+        arr.splice(index,1)
+        setproductUnique(arr)
+        
+        console.log('clique')
+        console.log(index)
+        
+        // productUnique.splice(index,1)
+    }
     // FUNÇÃO QUE PREVINE VALORES NEGATIVOS
     const pressKey = (e)=>{
         const character = e.key
@@ -65,7 +74,7 @@ export default function Cart() {
                                 <p className='CardProduct-div-details-p thirdCard'>Preço</p>
                                 <p className='CardProduct-div-details-p'>Total</p>
                             </div>
-                            {productUnique.map(eachProduct=>(
+                            {productUnique.map((eachProduct,index)=>(
                             <div className='CardProduct-div-details-div' key={eachProduct.id}>
                                 <Link to={`/view/${eachProduct.id}`}>
                                     <img className='img-CardProduct' src={eachProduct.imagem}/>
@@ -77,7 +86,7 @@ export default function Cart() {
                                 </div>
                                 <div className='container-buttons'>
                                     <input type='number' onChange={(e)=>setValue(e.target.value)} onKeyDown={pressKey} onBlur={noZero} className='input-quantity' defaultValue={1} min={1}></input>
-                                    <button className='button-remove'>Remover</button>
+                                    <button className='button-remove' onClick={()=>removeItem(index)}>Remover</button>
                                 </div>
                                 <p className='price-number firstNumber'>99, 90</p>
                                 <p className='price-number'>{valor ?valor.toFixed(2): 99.90.toFixed(2)}</p> 
