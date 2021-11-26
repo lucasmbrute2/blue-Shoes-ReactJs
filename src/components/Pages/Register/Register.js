@@ -42,7 +42,7 @@ export default function Register(props) {
 
       const response = await Api.post("auth/login", payloadLogin, true);
       const body = await response.json();
-      setJwt(body.token);
+      localStorage.setItem('JWT',body.token);
       setUser(body.usuario);
       props.history.push("/");
     } else {
