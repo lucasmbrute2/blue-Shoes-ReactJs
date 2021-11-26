@@ -21,7 +21,6 @@ export default function Checkout() {
         })
         const produtos = await Promise.all(promises)
         setproductUnique(produtos)
-        console.log(productUnique)
     }   
 
     useEffect(()=>{
