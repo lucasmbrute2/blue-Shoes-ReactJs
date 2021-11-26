@@ -9,7 +9,7 @@ export default function ProductCardView({ product }) {
     const { cartLocal, setCartLocal } = useContext(Context)
     let size = 39
     let sneakerColor = Object.keys(product.tamanhos)
-    console.log(product)
+    
     const HandleAddToCart = (e) =>{
         e.preventDefault()  
 

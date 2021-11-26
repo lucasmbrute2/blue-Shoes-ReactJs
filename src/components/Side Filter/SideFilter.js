@@ -1,28 +1,37 @@
-import React, { useContext } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Api } from '../../Api/Api'
-import { Context } from '../../context/CtxApp'
+import SideFilterBrands from '../SideFilterBrands/SideFilterBrands'
 import './SideFilter.css'
 
 export default function SideFilter() {
-    
-    const { setProduct } = useContext(Context)
-    
-    const HandleFilterSideBar = async (e) =>{
-        const elementText = e.target.innerText
-        const response = await Api.getAll(`produto?marca=${elementText}`)
-        const body = await response.json()
-        setProduct(body)
-    }
-    
+    const [brands, setBrand] = useState([])
+
+    useEffect(()=>{
+        const loadBrandList = async () => {
+            const response = await Api.getAll("marca/todas",true);
+            const results = await response.json();
+            setBrand(results);
+        }
+        loadBrandList();
+    },[])
     return (
         <>
         <div className="side-filter-container">
             <details>
                 <summary>Marca</summary>
                 <section>
-                    <p onClick={(e)=>HandleFilterSideBar(e)}>Nike</p>
-                    <p onClick={(e)=>HandleFilterSideBar(e)}>Adidas</p>
-                    <p onClick={(e)=>HandleFilterSideBar(e)}>Puma</p>
+                {brands.map((brand,index)=>(
+                    <SideFilterBrands
+                    brand={brand}
+                    />
+                ))}
+                </section>
+            </details>
+            <details>
+                <summary>Gênero</summary>
+                <section>
+                    <p>Masculino</p>
+                    <p>Feminino</p>
                 </section>
             </details>
             <details>

@@ -3,6 +3,7 @@ import { Api } from '../../../Api/Api'
 import { Context } from '../../../context/CtxApp'
 import OrderForm from '../../OrderForm/OrderForm'
 import './Cart.css'
+import Footer from "../../Footer/Footer";
 
 export default function Cart() {
     
@@ -52,38 +53,38 @@ export default function Cart() {
         return <div>Carrinho vazio...</div>
     }
     return (
+        <>
         <div className='Cart header-height'>        
                 <div className="Cart-Container">
                     <h1 className='Cart-Container-h1'>Carrinho</h1>
                         <div className='cardProduct-div'>
-                                <div className='cardProduct-div-details'>
+                            <div className='cardProduct-div-details'>
                                 <p className='CardProduct-div-details-p firstCard'>Detalhes</p>
                                 <p className='CardProduct-div-details-p secondCard'>Quantidade</p>
                                 <p className='CardProduct-div-details-p thirdCard'>Preço</p>
                                 <p className='CardProduct-div-details-p'>Total</p>
+                            </div>
+                            {productUnique.map(eachProduct=>(
+                            <div className='CardProduct-div-details-div' key={eachProduct.id}>
+                                <img className='img-CardProduct' src={eachProduct.imagem}/>
+                                <div className='items-description'>
+                                    <h3 className='items-description-h3'>{eachProduct.nome}</h3>
+                                    <p><span className='items-description-span'>Cor:</span> Azul</p>
+                                    <p><span className='items-description-span'>Tamanho: </span>39</p>
                                 </div>
-                                {productUnique.map(eachProduct=>(
-                                <div className='CardProduct-div-details-div' key={eachProduct.id}>
-                                    <img className='img-CardProduct' src={eachProduct.imagem}/>
-                                    <div className='items-description'>
-                                        <h3 className='items-description-h3'>{eachProduct.nome}</h3>
-                                        <p><span className='items-description-span'>Cor:</span> Azul</p>
-                                        <p><span className='items-description-span'>Tamanho: </span>39</p>
-                                    </div>
-                                    <div className='container-buttons'>
+                                <div className='container-buttons'>
                                     <input type='number' onChange={(e)=>setValue(e.target.value)} onKeyDown={pressKey} onBlur={noZero} className='input-quantity' defaultValue={1} min={1}></input>
                                     <button className='button-remove'>Remover</button>
                                 </div>
                                 <p className='price-number firstNumber'>99, 90</p>
                                 <p className='price-number'>{valor ?valor.toFixed(2): 99.90.toFixed(2)}</p> 
-                                </div>
-                                    ))}
-                                                  
                             </div>
-                             
-                    
+                            ))}                    
+                        </div>    
                 </div>
             <OrderForm cartLocal={cartLocal} price={productUnique.reduce((acc, curr)=> acc + curr.preco, 0).toFixed(2)}/>
         </div>
+        <Footer/>
+        </>
     )
 }
